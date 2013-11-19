@@ -1,0 +1,82 @@
+fr:
+  home: "Home"
+  my_account: "Mon Compte"
+  help: "Aide"
+  map_search: "Voir carte"
+  fast_search: "Recherche rapide"
+  follow: "Follow"
+  chat_online: "Chat online"
+  ask_for_a_call_back: "Demander un rappel"
+  contact: "Contact" 
+  followers: "Followers" 
+  all_deals: "Toutes les Promos"
+  slots_available: "places disponibles"
+  deal_ends_in: "Fin de la promotion"
+  print_a_coupon: "Imprimer mon coupon"
+  recommend: "Recommander"
+  terms_of_service: "Conditions générales d'utilisation"
+  legal_notice: "Mentions légales"
+  all_news: "Toutes les news"
+  buy_it: "Acheter"
+  all_products: "Tous les produits"
+  
+  forgot_password: "Mot de passe oublié"
+  set_new_password: "Modifier votre mot de passe"
+  send_reset_instructions: "Valider"
+  sign_in: "Se connecter"
+  sign_up: "S'inscrire"
+  resend_confirmation_instructions: "Renvoyer les informations de confirmation"
+  
+
+  categories:
+    beauty: "Beauté"
+    health: "Bien-être"
+    house: "Maison"
+    food: "Fooding"
+    shopping: "Shopping" 
+    leisure: "Loisirs"
+    practice: "Pratique"
+    administrative: "Administratif"
+    
+  flash:
+    pro:
+      already_signed_in: "Vous êtes déjà utilisateurs, merci de vous déconnecter avant de vous créer un compte professionnel."
+
+  buttons:
+    title:
+      dev: "En développement"
+      active: "Fonctionnalité active"
+      unactive: "Fonctionnalité non activée"
+    tooltips:
+      user:
+        shared: 
+          dev: "Bientôt vous pourrez "
+          unactive: "Ce magasin n'a pas encore "
+        follow: ""
+        contact: "contacter cette boutique directement sur Jangala Market"
+        call: "demander à cette boutique de vous rappeler"
+        store_website: "accéder au site web de cette boutique via Jangala Market"
+        facebook_page: "accéder à la page Facebook de cette boutique via Jangala Market"
+        jangalist: ""
+        buy: "réserver en ligne et venir en boutique pour récupérer votre achat"
+        unactive:
+          store_website: "renseigné son site"
+          facebook_page: "renseigné sa page Facebook"
+          buy: " la possibilité de vous faire réserver ses produits"
+      pro:
+        shared:
+          dev: "Bientôt les internautes pourront "
+          active: "Les internautes peuvent "
+          unactive: "Vous n'avez pas encore "
+        follow: "suivre vos ajouts de produits, promotions, et actualités"
+        contact: "vous contacter directement sur Jangala Market"
+        call: "vous demander de les rappeler"
+        store_website: "visiter votre site web via Jangala Market. "
+        facebook_page: "visiter votre page Facebook via Jangala Market."
+        jangalist: "ajouter vos produits et promotions dans leurs listes achats"
+        buy: "acheter en ligne et venir récupérer leurs achats directement en boutique"
+        recommend: "recommander vos produits, promotions, et actualités à leurs amis"
+        unactive: 
+          store_website: "renseigné votre site. <br /> <em>Cliquez pour modifier l'URL de votre site</em>"
+          facebook_page: "renseigné votre page Facebook. <br /> <em>Cliquez pour modifier l'URL de votre page Facebook</em>"
+          buy: " la possibilité de vous faire réserver vos produits"

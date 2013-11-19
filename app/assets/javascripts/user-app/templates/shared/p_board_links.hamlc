@@ -1,0 +1,5 @@
+.nav.boards
+  %ul.tabs
+    - Nextdoorz.Cache.Boards.each (board)->
+      %li
+        %a.board-link.help-step1.help-step2{href: "/user/boards/#{board.id}", id: "board_#{board.id}"}= (board.get 'title').capitalize()

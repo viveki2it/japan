@@ -1,0 +1,81 @@
+= render 'stores/details', store: @store
+
+- if @products.length == 0 && @deals.length == 0 && @news.length == 0
+  .store-start
+    %span.store-start-title Maintenant, ajoutez
+    %br
+    =store_entity_buttons(true)
+
+- else
+  .wrapper 
+    .fright.mt-1-5
+      .title-border.mb05
+        .title Ajoutez    
+      = store_entity_buttons()
+
+    .l-subnav    
+      %ul
+        %li
+          %a.current.masonry-filter{href: '#', 'data-masonry-filter' => ""} 
+            %span Tout 
+            %span.total>= " (#{@products.length + @deals.length + @news.length})"
+        %li
+          %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-products"} 
+            %i.icon.i-product
+            %span Produits 
+            %span.total>= " (#{@products.length})"
+        %li
+          %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-deals"} 
+            %i.icon.i-deal
+            %span Promotions 
+            %span.total>= " (#{@deals.length})"
+        %li
+          %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-news"} 
+            %i.icon.i-new
+            %span Actualités 
+            %span.total>= " (#{@news.length})"
+
+  .articles.wrapper.masonry
+    .list.masonry#masonry
+      - @products.each do |item|
+        = render "products/list_item", product: item
+
+      - @deals.each do |item|
+        = render "deals/list_item", deal: item
+
+      - @news.each do |item|
+        = render("news/list_item", news: item)
+-#
+-#.row-fluid.clear
+-#
+-#  .products.top.list.span6
+-#    .title
+-#      %h3= t(:top_products)
+-#      .pull-right
+-#        %a.add_products{:href=>'#'}
+-#          %img.add-icon{:src=>'/assets/icons/add.png'}
+-#          =t(:add_product)
+-#    - @products.each do |product|
+-#      = render "products/list_item", product: product
+-#
+-#  .deals.top.list.span6
+-#    .title
+-#      %h3= t(:top_deals)
+-#      .pull-right
+-#        %a.add_deals{:href=>'#'}
+-#          %img.add-icon{:src=>'/assets/icons/add.png'}
+-#          =t(:add_deal)
+-#    - @deals.each do |deal|
+-#      = render "deals/list_item", deal: deal
+-#
+-#.news.top.list
+-#  .title
+-#    %h3= t(:top_news)
+-#    .pull-right
+-#      %a.add_news{:href=>'#'}
+-#        %img.add-icon{:src=>'/assets/icons/add.png'}
+-#        =t(:add_news)
+-#  - @news.each_slice(2) do |pair|
+-#    .row-fluid
+-#      - pair.each do |item|
+-#        .span6= render "news/list_item", news: item

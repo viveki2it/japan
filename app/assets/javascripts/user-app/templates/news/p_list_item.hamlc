@@ -1,0 +1,14 @@
+.article
+  %a{href: '/news/#{@news.get('id')}'}
+    - if @news.get('picture')
+      %img{src: @news.get('picture')['middle']}
+  %h3
+    %a{href:"/news/#{@news.get('id')}"}= @news.get 'title'
+  %h4= @news.get("updated_date")
+  %p = @news.get 'content'
+  .shop.clearfix
+    - #%a.profile{href:'#'}
+    - #  %img{src: '/assets/landing/fondateur-jeanbaptiste.jpg'}
+    - if @board
+      - store = @board.get('stores').get(@news.get('store_id'))
+      != Nextdoorz.getTemplate('shared/p_follow_button')(store)

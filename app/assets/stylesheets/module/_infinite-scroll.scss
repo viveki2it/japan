@@ -1,0 +1,24 @@
+/* ==|=======================================================================
+   Module/Infinite Scroll
+   ========================================================================== */
+
+.m-infinite-scroll {
+	text-align: center;
+	margin: 2em 0 -3.5em;
+	padding: 2em 0;	
+	background-image: image_url('1px-white-80.png');
+	@include box-shadow(0, -1px, 1px, #eee);
+	display: none;
+
+	.infinite-loader {
+		background-image: image_url('infinite-scroll-loader.gif');
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+		vertical-align: -2px;
+		margin-right: .3em;
+	}
+	.infinite-text {
+		color: #999;			
+	}
+}

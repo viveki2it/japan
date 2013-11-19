@@ -1,0 +1,28 @@
+.cache-black{:style => "opacity: 1; position: absolute; height: auto; min-height: 100%;"}
+  %span#profile-close.wrap-icon
+    %span.icon.i-cross
+  %span.logo-jm
+  #signup-modal.modal.m-create-account
+    .modal-header
+      %h3.title-border Inscrivez-vous !
+    .modal-body
+      %p
+        Avec Jangala Market redécouvrez les commerces et boutiques de vos quartiers en fonction de vos intérêts. Vous pouvez sauvegarder vos nouvelles découvertes en vous inscrivant dès aujourd'hui.
+    
+      .facebook-connexion
+        %a.btn.big.no-border.facebook.mt1{href: '/users/auth/facebook/?action=signup&role=user'}
+          %i.icon.i-btn.i-facebook
+          %span Se connecter avec Facebook
+        %p.email-text
+          ou en utilisant
+          %a#btn-email-connexion.btn-switch votre e-mail
+    
+      %form.email-connexion.signup-signin{method: 'post', data-remote: 'true', action: '/users/create.json'}
+        %input{type: 'text', value: '', name: 'user[last_name]', placeholder: 'Votre nom'}
+        %input{type: 'text', value: '', name: 'user[first_name]', placeholder: 'Votre prénom'}
+        %input{type: 'email', value: '', name: 'user[email]', placeholder: 'Votre email'}
+        %input{type: 'password', value: '', name: 'user[password]', placeholder: 'Votre mot de passe'}
+        %button.btn.color1.big Valider
+        %p.email-text
+          ou en utilisant
+          %a#btn-facebook-connexion.btn-switch votre compte Facebook

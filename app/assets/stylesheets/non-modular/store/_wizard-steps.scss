@@ -1,0 +1,61 @@
+.step3, .edit-modal {
+	fieldset {
+		text-align: left;
+	}
+	.row-fluid {
+		margin-bottom: 1em;
+		height: 39px;
+	}
+	label {
+		display: inline-block;
+	}
+	input[type="text"] {
+		width: 4em;
+	}
+	.step3-show-schedule-afternoon {
+		color: #fff;
+	}
+	.span3 {
+		text-align: right;
+	}
+	h3 {
+		margin: .2em 0;
+		font-family: $proxima-bold;
+	}	
+	.step3-block {
+		margin-right: .5em;
+		display: inline-block;
+	}
+	.step3-show-close,
+	.step3-show-open {
+		margin-left: 1em;
+	}
+	.step3-schedule-afternoon,
+	.step3-close {
+		display: none;
+	}
+	.step3-schedule-afternoon {
+		//margin-left: 1em;
+	}
+	.step3-close {
+		margin: .3em 0;
+	}
+}
+
+.step4 {
+	.btn-group-jpath {
+		margin-left: -4em;
+	}
+	
+	.dropdown-toggle {
+		width: 230px;
+		text-align: left;
+		
+		.caret {
+			float: right;
+		}
+	}
+	.dropdown-menu {
+		width: 230px;
+	}
+}

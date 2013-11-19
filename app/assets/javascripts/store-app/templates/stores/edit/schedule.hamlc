@@ -1,0 +1,37 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} Les horaires
+  .modal-body.edit-modal
+    %form
+      %fieldset
+        - tab = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+        - days =  ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+        - for i, t of tab
+          .row-fluid
+            .span3
+              %h3= t
+            .span9{id: days[i]}
+              .step3-open
+                .step3-block
+                  %label{for: days[i] + '[start]'} de
+                  %input.span{type: 'text', id: days[i] + '_start'}
+                .step3-schedule-afternoon
+                  .step3-block
+                    %label{for: days[i] + '[pause_start]'} à
+                    %input.span{type: 'text', id: days[i] + '_pause_start'}
+                  .step3-block
+                    %label{for: days[i] + '[pause_end]'} et de
+                    %input.span{type: 'text', id: days[i] + '_pause_end'}
+                .step3-block
+                  %label{for: days[i] + '[end]'} à
+                  %input.span{type: 'text', id: days[i] + '_end'}
+                %a.step3-show-schedule-afternoon{href:''} + Une pause à midi ?
+                %a.btn.color2.step3-show-close.small{href:'', name: i} x Fermé ce jour ?
+              .step3-close
+                Fermé
+                %a.btn.color2.step3-show-open.small{href:'', name: i} + Ouvert ce jour ?
+
+  .modal-footer
+    %button.btn.big.color2.save Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

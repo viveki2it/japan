@@ -1,0 +1,4 @@
+- unless picture.nil?
+  .picture{class: style.to_s, 'data-model-id' => picture.id}
+    = image_tag picture.image.url(style) 
+    -# "/assets/image_example_#{style}.jpg" 

@@ -1,0 +1,49 @@
+/* ==|=======================================================================
+   Module/Store/Recommend
+   ========================================================================== */
+
+.m-recommend {
+	display: none;
+	
+	.title-border {
+		border: solid rgba(#fff, .1);
+		border-width: 1px 0;
+		padding: .7em 0;
+		font: normal 2.5em/1.3 $proxima-bold; 
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.modal-header, .modal-body {
+		width: 700px;
+		margin: 0 auto;
+		@include animation(fadeInDown 1s);
+	}
+	
+	.modal-body {
+		padding-bottom: 2em;
+		
+		.title-h4 {
+			font-size: 1.5em;
+			text-transform: uppercase;
+			margin-top: 0;
+		}
+		
+		.share {
+			a.btn {
+				width: 160px;
+			}
+		}
+		
+		p {
+			font: 300 1.25em/1.5 $proxima-light;
+		}	
+		input[type="email"], textarea {
+			width: 300px;
+			display: block;
+			margin-bottom: 1em;
+		}
+		textarea {
+			height: 80px;
+		}
+	}	
+}

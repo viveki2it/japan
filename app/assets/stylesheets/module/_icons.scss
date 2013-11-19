@@ -1,0 +1,247 @@
+/* ==|=======================================================================
+   Module/Icons
+   ========================================================================== */
+
+.icon {
+	@include d-inline-block();
+	background-image: image_url('jangala-sprite.png');
+	
+	&.i-address {
+		background-position: -127px -65px;
+		width: 10px;
+		height: 17px;
+	}
+	&.i-phone {
+		background-position: -165px -66px;
+		width: 15px;
+		height: 16px;
+	}
+	&.i-opening {
+		background-position: -208px -67px;
+		width: 15px;
+		height: 14px;
+	}
+	&.i-cross {
+		background-position: -203px -28px;
+		width: 18px;
+		height: 19px;
+	}
+	&.i-valid {
+		background-position: -199px -170px;
+		width: 15px;
+		height: 15px;
+	}
+	
+	&.i-tick {
+		background-position: -278px -416px;
+		width: 13px;
+		height: 14px;
+	}
+	&.i-close {
+		background-position: -520px -103px;
+		width: 10px;
+		height: 12px;
+		
+		&.i-dark {
+			background-position: -500px -88px;
+		}
+	}
+	
+	/* Social pack */
+	&.i-social {
+		width: 32px;
+		height: 32px;
+		
+		&.i-twitter {
+			background-position: -21px -57px;
+		}
+		&.i-facebook {
+			background-position: -62px -56px;
+		}
+		&.i-tumblr {
+			background-position: -218px -364px;
+		}
+	}
+	
+	/* Round pack */
+	&.i-round {
+	
+		/* Sizes */
+		&.i-small {
+			width: 61px;
+			height: 60px;
+		}
+		&.i-medium {
+			width: 74px;
+			height: 74px;
+		}
+		&.i-big {
+			width: 92px;
+			height: 92px;
+		}
+		
+		&.i-support {
+			background-position: -242px -8px;
+		}
+		&.i-fast {
+			background-position: -314px -8px;
+		}
+		&.i-simple {
+			background-position: -386px -8px;
+		}
+		&.i-traffic {
+			background-position: -249px -84px;
+		}
+		&.i-contact {
+			background-position: -330px -81px;
+		}
+		&.i-order {
+			background-position: -414px -78px;
+		}
+		&.i-deals {
+			background-position: -247px -163px;
+		}
+		&.i-fan {
+			background-position: -332px -163px;
+		}
+		&.i-buzz {
+			background-position: -12px -251px;
+		}
+		&.i-seo {
+			background-position: -111px -249px;
+		}
+		&.i-market {
+			background-position: -218px -245px;
+		}
+		&.i-suggestion {
+			background-position: -323px -243px;
+		}
+		&.i-diffusion {
+			background-position: -417px -237px;
+		}
+	}
+	
+	/* Arrows */
+	&.i-arrow-bottom {
+		background-position: -272px -373px;
+		width: 25px;
+		height: 18px;
+	}
+	&.i-arrow-bottom-small {
+		background-position: -516px -171px;
+		width: 9px;
+		height: 7px;
+	}	
+	
+	/* Categories pack */
+	&.i-category {
+		width: 55px;
+		height: 55px;
+		
+		&.i-maison {
+			background-position: -333px -348px;
+		}
+		&.i-fooding {
+			background-position: -406px -351px;
+		}
+		&.i-beaute_bien_etre {
+			background-position: -334px -422px;
+		}
+		&.i-mode {
+			background-position: -410px -423px;
+		}
+		&.i-sorties {
+			background-position: -490px -349px;
+		}
+		&.i-culture {
+			background-position: -490px -421px;
+		}
+	}
+	
+	/* Type of cat */
+	&.i-type-cat {
+		background-position: -537px -121px;
+		width: 17px;
+		height: 12px;
+	}
+	&.i-type-subcat {
+		background-position: -540px -166px;
+		width: 17px;
+		height: 17px;
+	}
+	&.i-type-tag {
+		background-position: -537px -142px;
+		width: 20px;
+		height: 15px;
+	}
+	
+	/* In buttons */
+	&.i-btn {
+		&.i-facebook {
+			background-position: -229px -423px;
+			width: 19px;
+			height: 42px;
+			
+			&.i-medium {
+				background-position: -114px -212px;
+				background-size: 307px 248px;
+				width: 10px;
+				height: 21px;
+			}
+			&.i-small {
+				background-position: -257px -401px;
+				width: 7px;
+				height: 15px;
+			}
+		}
+		&.i-twitter {
+			background-position: -272px -454px;
+			width: 24px;
+			height: 31px;
+		}
+	}
+	
+	/* Subnav icons */
+	&.i-product {
+		background-position: -93px -224px;
+		width: 12px;
+		height: 16px;
+		
+		&.blue {
+			background-position: -93px -202px;
+		}
+	}
+	&.i-deal {
+		background-position: -112px -225px;
+		width: 13px;
+		height: 15px;
+		
+		&.blue {
+			background-position: -112px -203px;
+		}
+	}
+	&.i-new {
+		background-position: -133px -227px;
+		width: 16px;
+		height: 11px;
+		
+		&.blue {
+			background-position: -133px -205px;
+		}
+	}
+	&.i-trash {
+		background-position: -157px -224px;
+		width: 15px;
+		height: 15px;
+
+		&.blue {
+			background-position: -157px -203px;
+		}
+	}
+
+	&.i-edit {
+		background-position: -200px -201px;
+		width: 16px;
+		height: 15px;
+	}
+}

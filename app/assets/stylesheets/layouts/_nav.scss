@@ -1,0 +1,77 @@
+/* ==|=======================================================================
+   Module/Nav
+   ========================================================================== */
+
+.nav {	
+	display: inline-block;
+	position: relative;
+	
+	> ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		
+		> li {
+			display: inline-block;
+			
+			> a {
+				display: block;				
+			}
+		}
+	} /* ul */
+	
+	&.primary {
+		
+		> ul {
+			margin: 0;
+			line-height:  3.5625em; /* 57/16 */
+			
+			> li {																
+				> a {
+					color: #b0c2c9;
+					font: 300 1em/1.5em $proxima-light;
+					text-transform: uppercase;
+					line-height: 4.4em;
+					padding: 0 1em;
+					border-left: solid 1px rgba(#000,.1);
+					border-left: solid 1px #142a33\9;
+					
+					&:hover {
+						color: #fff;
+						text-decoration: none;
+					}
+					
+					&.btn {
+						vertical-align: 1px;
+						border-color: #091C24;
+						color: #fff;
+						line-height: 2;
+						margin: .9em 0;
+					}
+				}
+				&.current-menu-item a {
+					color: #fff;
+					font-family: $proxima-bold;
+					@include gradient-linear(#18333e, #10232b);
+				}				
+				&.account {
+					a {
+						color: $yellow;
+					}
+				}
+			}
+		}
+		
+		&.new-board li a {
+			color: #fff;
+			font-family: $proxima-bold;
+			@include gradient-linear(#18333e, #10232b);
+			
+			&:hover {
+				text-shadow: 0 0 20px #fff;
+			}
+		}
+	} /* &.primary */
+
+} /* nav */

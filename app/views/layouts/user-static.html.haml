@@ -1,0 +1,65 @@
+!!!
+-#
+  /[if lt IE 7]
+    %html.no-js.lt-ie9.lt-ie8.lt-ie7
+  /[if IE 7]
+    %html.no-js.lt-ie9.lt-ie8
+  /[if IE 8]
+    %html.no-js.lt-ie9
+
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{'http-equiv'=> 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
+    %title= content_for?(:title) ? content_for(:title) : "Jangala Market Beta"
+    %meta{name: 'description', content: 'Jangala Market Store'}
+    %link{rel: 'shortcut icon', type: 'image/png', href: '/favicon.png'}
+    = csrf_meta_tag
+    = stylesheet_link_tag 'user'
+  %body.is-not-configured
+    %header#header.is-centered
+      .wrapper.clearfix
+        = link_to '', home_page_url, class: 'logo-jm beta'
+        .new-board
+          %span
+        %form.search
+          %input{type: "text", placeholder: 'Recherche'}
+          %button
+        .profile-wrap
+          .profile.dropdown-toggle
+            = image_tag('landing/fondateur-jeanbaptiste.jpg')
+            %i.icon.i-arrow-bottom-small
+          %ul.m-dropdown-menu.pull-right
+            %li= link_to 'Mon compte', '#'
+            %li= link_to 'Deconnexion', '#'
+    .subheader-text
+      %p.wrapper.text-center Jangala Market est la place de marché qui connecte les citadins avec les commerces de Paris.
+        
+    .subheader-nav.l-header-fullimg.half
+      .wrapper.clearfix
+        %nav.boards
+          %ul
+            %li= link_to 'Sport', '#', class: 'active'
+            %li= link_to 'Fashion', '#'
+        %nav.menu
+          %ul
+            %li= link_to 'Aide', '#'
+            %li= link_to 'Ma jangalist', '#'
+            %li= link_to 'Mes magasins', '#'
+    
+    %section#container
+      = yield
+    
+    %footer#footer= render partial: 'shared/footer'
+
+
+  / Scripts are in the end of file for better performance
+  = include_gon init: true, namespace: 'Context'
+  = javascript_include_tag "user-app"
+  = yield :scripts

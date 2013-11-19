@@ -1,0 +1,19 @@
+#tagcats.dropdown-control.dib
+  .btn-group#tagcat-block
+    %button.btn#tagcat-input.dropdown-toggle.btn-large{"data-toggle" => "dropdown"}
+      %span.current Catégorie de type
+      %span.caret
+    %ul.dropdown-menu
+      - _.each @tags, (tag_group)->
+        %li{group_id: tag_group.get 'id'}
+          %a{href: '#'}!= tag_group.get 'name'
+#tags.dropdown-control.dnone
+  .btn-group#tag-block
+    %button.btn#tag-input.dropdown-toggle.btn-large{"data-toggle" => "dropdown"}
+      %span.current Type
+      %span.caret
+    %ul.dropdown-menu
+      - _.each @tags, (tag_group)->
+        - _.each tag_group.get('tags'), (tag)->
+          %li{group_id: tag_group.get 'id', tag_id: tag.id, tag_name: tag.name}
+            %a{href: '#'}!= tag.name

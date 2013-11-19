@@ -1,0 +1,14 @@
+.article
+  %a{href: '/deals/#{@deal.get('id')}'}
+    - if @deal.get('picture')
+      %img{src: @deal.get('picture')['middle']}
+  %h3
+    %a{href: "/deals/#{@deal.get('id')}"}= @deal.get 'name'
+  %h4= "#{@deal.get 'discount_rate'}%"
+  %p = @deal.get 'description'
+  .shop.clearfix
+    - #%a.profile{href:'#'}
+    - #  %img{src: '/assets/landing/fondateur-jeanbaptiste.jpg'}
+    - if @board
+      - store = @board.get('stores').get(@deal.get('store_id'))
+      != Nextdoorz.getTemplate('shared/p_follow_button')(store)

@@ -1,0 +1,3 @@
+.checkbox-subcat.checked{id: "district_#{@id}"}
+  %span= @id
+  %i.icon.i-tick

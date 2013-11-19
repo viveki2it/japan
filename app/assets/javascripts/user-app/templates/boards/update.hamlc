@@ -1,0 +1,3 @@
+#child_container.user-board-update..user-categories.l-filter-edit
+  %br
+  %button#save.btn.color2.big.no-border.pl3.pr3 Valider

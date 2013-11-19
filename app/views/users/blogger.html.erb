@@ -1,0 +1,27 @@
+<br/><br/><br/><br/><br/>
+<div class="wrapper w550 form text-center">
+  <div style="color: red;">
+    <%= flash[:error] %>
+  </div>
+  <%= form_tag(users_blogger_callback_path, :method => "post") do %>
+    <table>
+      <tr>
+        <td>Blogger User Id</td>
+        <td><%= text_field_tag :blogger_user_id %></td>
+      </tr>
+      <tr>
+        <td>Blogger User Name</td>
+        <td><%= text_field_tag :blogger_user_name %></td>
+      </tr>
+      <tr>
+        <td>Blogger User Password</td>
+        <td><%= text_field_tag :blogger_user_password %></td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td><%= submit_tag "Continue" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>

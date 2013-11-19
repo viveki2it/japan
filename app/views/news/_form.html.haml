@@ -1,0 +1,14 @@
+= simple_form_for @news do |f|
+  %fieldset
+    .row-fluid.picture-placeholder
+    
+    = f.input(:title, :label => "Titre", 
+      :input_html => {:class => "span12"}, :wrapper_html => {:cass => "row-fluid mb1"}) 
+    
+    = f.input(:content, :label => "Actualité", 
+      :input_html => {:class => "span12 big"},
+      :wrapper_html => {:class => "row-fluid mb1"})
+
+    .row-fluid.tags-field
+      %label.div.pr05{:for => "tag_id"} Type
+      

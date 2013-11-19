@@ -1,0 +1,38 @@
+/* ==|=======================================================================
+   Module/Store Start
+   ========================================================================== */
+
+.store-start {
+	display: inline-block;
+	padding: 2em 0;
+	overflow: hidden;
+	position: relative;
+	left: 50%;
+	margin-left: -240px;
+	text-align: center;
+
+	.store-start-title {
+		color: #aaa;
+		font-size: 1.3em;
+		display: inline-block;
+		margin-bottom: .5em;
+		position: relative;
+
+		&:after, &:before {
+			content: "";
+			position: absolute;
+			width: 1000px;
+			top: .5em;
+			border-bottom: 1px solid #e6e6e6;
+		}
+		&:after {
+			right: 193px;
+		}
+		&:before {
+			left: 193px;
+		}
+	}
+	.btn-group-jpath {
+		display: inline-block;
+	}
+}

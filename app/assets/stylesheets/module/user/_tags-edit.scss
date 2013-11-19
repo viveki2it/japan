@@ -1,0 +1,63 @@
+/* ==|=======================================================================
+   Module/User/Tags Edit
+   ========================================================================== */
+   
+.m-tags-edit {
+	margin-bottom: 2em;
+	text-align: left;
+	
+	.title-h2 {
+		font: normal 2em/1.5 $proxima-bold;
+		margin-bottom: 0;
+	}
+	fieldset {
+		margin-top: 1em;
+	}
+	.title-h3 {
+		margin-top: 1em;
+		font-size: 1.375em; /* 22/16 */
+		border-top: solid #c9c9c9 1px;
+		padding: .3em .7em;
+		width: 100%;
+		@include box-sizing(border-box);
+		background: image_url("pattern-stripes.png");		
+	}
+	.title-h4 {
+		margin: 0;
+		float: left;
+		font-size: 1em;
+		min-width: 120px;
+	}
+	.tag {
+		border-top: 1px solid #dcdcdc;
+		padding: 1em;
+	}
+	.inputs-wrap {
+		margin-left: 12em;
+	}
+	input {
+		display: none;
+	}
+	label {
+		font-family: $proxima-light;
+		margin: 0 .6em .7em 0;
+		white-space: nowrap;
+		color: #7b7b7b;
+		background-color: #f3f3f3;
+		@include border-radius(.3em);
+		padding: .1em .6em;
+		border: solid 1px #ddd;
+		@include box-shadow(0, 1px, 1px, rgba(#000,.05));
+		display: inline-block;
+		cursor: pointer;
+		
+		&:hover {
+			border-color: #ccc;
+		}		
+		&.is-active {
+			color: #fff;
+			background-color: $color3;
+			border-color: darken($color3, 10%);
+		}
+	}
+}  

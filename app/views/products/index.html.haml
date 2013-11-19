@@ -1,0 +1,12 @@
+.text-default
+  .l-header-fullimg.double
+    .wrapper
+      %h1= "#{t :all_products}"
+
+.articles.masonry.wrapper
+  .products.only.list.clearfix#masonry-products
+    - @products.each_slice(2) do |pair|
+      - pair.each do |item|
+        = render "products/list_item", product: item
+    = paginate @products
+    

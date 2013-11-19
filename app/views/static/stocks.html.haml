@@ -1,0 +1,130 @@
+.text-default
+  .l-header-fullimg
+    %div.wrapper
+      = title "Stocks"
+.wrapper.nm-stocks
+  .m-form-search.fright
+    %input{type:'text', placeholder: 'Rechercher'}
+    %input.btn.color1{type:'submit', value:'Ok'}
+  .l-subnav    
+    %ul
+      %li
+        %a.current.masonry-filter{href: '#', 'data-masonry-filter' => ""} 
+          %span Tout 
+          %span.total (12)
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-products"} 
+          %i.icon.i-product
+          %span Produits 
+          %span.total (7)
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-deals"} 
+          %i.icon.i-deal
+          %span Promotions 
+          %span.total (5)
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-news"} 
+          %i.icon.i-trash
+          %span Corbeille
+          %span.total (10)    
+
+  %table.m-table#stocks
+    %tr
+      %th{colspan: '2'} Produit
+      %th Catégorie
+      %th Tag
+      %th 
+        Stock
+        %i.icon.i-sort-desc
+      %th Fin promo
+      %th{colspan: '2'} &nbsp;
+    %tr#stock-1.stocks-show
+      %td.table-img 
+        = image_tag('http://www.intersport-pertuis.com/images/jpg/p1-produits-145.jpg')
+      %td 
+        %a.stocks-main-edit{href:'#'} 
+          Jean Levi's
+          %i.icon.i-edit
+      %td Habits & accessoires
+      %td Pantalon
+      %td.stocks-values 
+        %span.stocks-total 16
+        %span.stocks-number 5
+        %span.stocks-label Small
+        %span.stocks-number 8
+        %span.stocks-label Medium
+        %span.stocks-number 4
+        %span.stocks-label Large
+      %td -
+      %td.stocks-btn
+        %a.btn.small.stocks-btn-update{href:'#'} Mettre à jour le stock
+      %td
+        %i.icon.i-trash.stocks-delete
+    %tr#stock-1-edit.stocks-edit
+      %td{colspan:'2'}
+        %span.f-bold Jean Levi's
+      %td{colspan:'4'} 
+        %span.stocks-number Small
+        %input{type:'number', value: '5'}
+        %span.stocks-number Medium
+        %input{type:'number', value: '8'}
+        %span.stocks-number Large
+        %input{type:'number', value: '4'}
+        .stocks-new
+        %a.stocks-add{href:'#'} + Ajouter
+        %span.stocks-total-wrap 
+          Total : 
+          %span.f-bold 16
+      %td.stocks-btn
+        %a.btn.color3.small.stocks-btn-valid{href:'#'} Mettre à jour
+      %td
+        &nbsp;
+    %tr#stock-2.stocks-show
+      %td.table-img 
+        = image_tag('http://chaussures-de-sport-pas-cher-chaussure-discount.com/images/nike/basket-nike.jpg')
+      %td 
+        %a.stocks-main-edit{href:'#'} 
+          Baskett nike
+          %i.icon.i-edit
+      %td Habits & accessoires
+      %td Chaussures
+      %td.stocks-values
+        %span.stocks-total 28
+        %span.stocks-number 5
+        %span.stocks-label 39
+        %span.stocks-number 3
+        %span.stocks-label 40
+        %span.stocks-number 4
+        %span.stocks-label 41
+        %span.stocks-number 3
+        %span.stocks-label 42
+        %span.stocks-number 9
+        %span.stocks-label 43
+      %td 2 jours
+      %td.stocks-btn
+        %a.btn.small.stocks-btn-update{href:'#'} Mettre à jour le stock
+      %td
+        %i.icon.i-trash.stocks-delete
+    %tr#stock-2-edit.stocks-edit
+      %td{colspan:'2'}
+        %span.f-bold Baskett nike
+      %td{colspan:'4'} 
+        %span.stocks-number 39
+        %input{type:'number', value: '5'}
+        %span.stocks-number 40
+        %input{type:'number', value: '8'}
+        %span.stocks-number 41
+        %input{type:'number', value: '4'}
+        %span.stocks-number 42
+        %input{type:'number', value: '4'}
+        %span.stocks-number 43
+        %input{type:'number', value: '4'}
+        .stocks-new
+        %a.stocks-add{href:'#'} + Ajouter
+        %span.stocks-total-wrap 
+          Total : 
+          %span.f-bold 16
+      %td.stocks-btn
+        %a.btn.color3.small.stocks-btn-valid{href:'#'} Mettre à jour
+      %td
+        &nbsp;

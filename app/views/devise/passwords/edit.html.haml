@@ -1,0 +1,17 @@
+.text-default
+  .l-header-fullimg
+    .wrapper
+      %h1= t :set_new_password
+
+  .wrapper.form.text-center.m-form-search
+    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), 
+      :html => {:method => :put, :class => "form-inline"}) do |f|
+      = f.input :reset_password_token, :as => :hidden
+      
+      = f.input :password, :placeholder => "Nouveau mot de passe", :label => false
+      = f.input :password_confirmation, :placeholder => "Confirmation", :label => false
+
+      = f.button :submit, t(:send_reset_instructions), :class => "button btn big color1", :style => "width:auto"
+      
+    = render "devise/shared/links"
+    

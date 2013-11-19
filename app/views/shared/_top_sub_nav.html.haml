@@ -1,0 +1,18 @@
+- if user_is_store_owner? 
+  - unless @store.nil? or true # TODO: Temporary disabled top panel
+    %hr.clb
+    %div.wrapper.clearfix
+      %div.subheader
+        %nav.secondary
+          %ul
+            %li{class: "#{'current-menu-item' if controller_name == 'products'}"}
+              = link_to 'Produits', store_products_path(@store), class: 'btn color1 border0'
+            %li{class: "#{'current-menu-item' if controller_name == 'deals'}"}
+              = link_to 'Deals', store_deals_path(@store), class: 'btn color1 border0'
+            %li{class: "#{'current-menu-item' if controller_name == 'news'}"}
+              = link_to 'Actualité', store_news_index_path(@store), class: 'btn color1 border0'
+        %div.text
+          %h2= @store.name
+          = link_to new_store_follow_path(@store), class: 'btn mini' do
+            %i.with-icon.yellow +
+            Suivre

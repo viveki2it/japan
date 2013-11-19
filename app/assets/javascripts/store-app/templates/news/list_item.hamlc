@@ -1,0 +1,6 @@
+%a(href="#")
+  .item.news{id: "news_#{this.news.id}"}
+    -#= image_tag news.image_url(:thumb)
+    %img{src:"http://placehold.it/360x200.jpg"}
+    %h4= this.news.title
+    .text= this.news.content

@@ -1,0 +1,3 @@
+%h2.clearfix.a-title
+  %span.title= @title
+#deals_list

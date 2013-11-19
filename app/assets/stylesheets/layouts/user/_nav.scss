@@ -1,0 +1,141 @@
+/* ==|=======================================================================
+Layout/User/Nav
+========================================================================== */
+
+.nav {
+		
+	&.boards {
+		float: left;
+		width: 640px;
+		margin-top: -.5em;		
+		
+		ul {
+			white-space: nowrap;
+			width: 100%;
+			
+			li {
+				width: 33%;
+				text-align: center;
+				
+				> span {
+					font: 100 1.3em/1.5 $proxima-regular;		
+					text-shadow: none;
+					font-family: $proxima-bold;
+					background: #fafafa image_url('pattern-noise.png');
+					color: $color1;
+					border: none;
+					@include box-shadow(0, -5px, 5px, rgba(#000, .75));
+					display: inline-block;
+					@include box-sizing(border-box);
+					width: 100%;
+				}
+				> a {
+					font: 300 1.5em/1.5 $proxima-light;
+					background: rgba($color1, .3);
+					background: image_url('1px-1a3642-30.png')\9; /* <=IE8 Hack */
+					border-bottom: .1em solid $color3;
+					padding: 2.5em .7em 2px;
+					margin-top: -1.5em;
+					color: #fff;
+					text-shadow: 0 3px 4px #000;
+					
+					i.icon {
+						display: none;
+					}
+					
+					&:hover {
+						text-decoration: none;
+						background: rgba($color1, .5);
+						background: image_url('1px-1a3642-50.png')\9; /* <=IE8 Hack */
+					}
+					&.active {
+						font-family: $proxima-regular;
+						text-shadow: none;
+						font-family: $proxima-bold;
+						background: #fafafa image_url('pattern-noise.png');						
+						color: $color1;
+						padding-bottom: 4px;
+						border: none;
+						@include box-shadow(0, -5px, 5px, rgba(#000, .75));
+						position: relative;
+						cursor: default;
+						
+						span:hover {
+							background: #faf8bc;
+						}
+			
+						i.icon {
+							position: absolute;
+							top: 44px;
+							right: 7px;
+							display: none;
+							opacity: .7;
+							cursor: pointer;
+							
+							&:hover {
+								opacity: 1;
+							}
+						}
+						
+						&:hover {
+							i.icon {
+							display: block;           
+							}
+						}
+					}
+				} /* a */
+				.m-rename-board {
+					padding-bottom: 4px;
+          padding-top: 27px;
+          .ajax-loader{
+            margin-left: 5px;
+          }
+				}				
+				input[type="text"] {
+					font-size: .8em;				
+					color: $color1;
+					padding: 0px 3px;
+					width: 140px;
+					@include box-sizing(border-box);
+					height: 31px;
+				}
+				.btn {
+					font-size: .6em;
+					height: 18px;
+					vertical-align: bottom;
+				}
+			} /* li */
+		} /* ul */
+	} /* &.boards */
+			
+	&.menu {
+		float: right;
+		margin-top: 1.3em;
+		
+		ul {
+			li {
+				a {
+					background: rgba($color1, .8);
+					background: image_url('1px-1a3642-80.png')\9; /* <=IE8 Hack */
+					@include border-radius(1em);
+					font-size: 1.15em;
+					color: #fff;
+					padding: .1em .6em;
+					margin-left: .4em;
+					
+					&:hover {
+						text-decoration: none;
+						background: $color1;
+					}
+					&.active {
+						background: #fff;
+						color: $color1;
+						font-family: $proxima-bold;
+						@include box-shadow(0, 1px, 2px, rgba(#000, .5));                       
+					}
+				}
+			}
+		}
+	} /* &.menu */
+
+} /* nav */

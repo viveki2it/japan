@@ -1,0 +1,10 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} Edit gallery
+  .modal-body
+    .row-fluid.picture-placeholder
+    .row-fluid.picture-placeholder
+
+  .modal-footer
+    %a.btn.btn-primary.btn-large{:href => "#"} Save

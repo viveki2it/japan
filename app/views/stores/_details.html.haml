@@ -1,0 +1,91 @@
+.store-profile{:class=>"#{ local_assigns[:moreinfo] ? 'noimg':'double'}"}
+  - if !local_assigns[:moreinfo]
+    .l-header-fullimg.double
+  .wrapper.clearfix
+    - if local_assigns[:moreinfo]
+      %h2.mod-title.mt0
+        %span Le magasin
+    .relative
+      .article
+        .bloc-left
+          %div
+            %div{class: "#{@edit_store_mode ? 'editable': ''}"}
+              - if @edit_store_mode
+                .hidden-edit
+                  .control-buttons
+                    = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'logo'
+              - if local_assigns[:moreinfo]
+                = link_to @store do
+                  = image_tag @store.logo.url(:thumb), class: 'logo-store'
+              - else
+                = image_tag @store.logo.url(:thumb), class: 'logo-store'
+          -# 
+            -# Galleries deactivated until new orders
+            %ul.gallery.edit-wrapper{class: "#{@edit_store_mode ? 'editable': ''}"}>
+              - if @edit_store_mode
+                .hidden-edit
+                  .control-buttons
+                    = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'gallery'
+              - @store.pictures.limit(2).each do |pic|
+                %li
+                  = link_to pic.image.url(:lightbox) do
+                    = image_tag pic.image.url(:micro)
+          %h4
+            %span= @store.following_users_count
+            =t(:followers)
+        .header
+          %ul.category{class: "#{@edit_store_mode ? 'editable': ''}"}>
+            - if @edit_store_mode
+              .hidden-edit
+                .control-buttons
+                  = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'category'
+            - group_categories(@store).each do |parent_category, categories|
+              %li.parent_category
+                = raw(parent_category)
+              %li.subcategories
+                = raw(categories.join(' | '))
+          - if @store.address
+            = link_to "Arrondissement #{@store.district}", '#', class: 'btn color1 mini'
+
+        %h1.title
+          - if local_assigns[:moreinfo]
+            = link_to @store.name, @store
+          - else
+            = @store.name
+        .description.edit-wrapper{class: "#{@edit_store_mode ? 'editable': ''}"}>
+          - if @edit_store_mode
+            .hidden-edit
+              .control-buttons
+                = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'description'
+          %p.text-edit
+            - if @store.description
+              != @store.description.gsub "\n", '<br/>'
+
+        .footer
+          %ul.details
+            %li.address.edit-wrapper{class: "#{@edit_store_mode ? 'editable': ''}"}>
+              - if @edit_store_mode
+                .hidden-edit
+                  .control-buttons
+                    = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'address'
+              %i.icon.i-address
+              %p.text-edit!= @store.address_to_s.gsub ", ", "<br>"
+
+            %li.phone.edit-wrapper{class: "#{@edit_store_mode ? 'editable': ''}"}>
+              - if @edit_store_mode
+                .hidden-edit
+                  .control-buttons
+                    = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'phone'
+              %i.icon.i-phone
+              %p.text-edit= @store.phone
+
+            %li.opening.edit-wrapper{class: "#{@edit_store_mode ? 'editable': ''}"}>
+              - if @edit_store_mode
+                .hidden-edit
+                  .control-buttons
+                    = link_to "Modifier", '#', class: 'btn btn-primary btn-mini edit',:popup => 'schedule'
+              %i.icon.i-opening
+              = render "stores/schedule", items: @store.schedule_items
+          = store_buttons(@store)
+          
+      .map= show_map(@store.address) if @store.address

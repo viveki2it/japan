@@ -1,0 +1,40 @@
+fr:
+  keywords: 'Keywords'
+  follow_store_notice: 'You are about to follow %{store_name}. Click button to proceed.'
+  sign_in: 'Sign in'
+  sign_out: 'Sign out'
+
+  errors:
+    start_before_end: 'Working hours beginning should be earlier than the end'
+    effective_before_discontinue: 'Schedule effective weekday should be before discontinue weekday'
+
+  abbreviated_weekdays:
+    mon: 'Lun'
+    tue: 'Tue'
+    wed: 'Wed'
+    thu: 'Thu'
+    fri: 'Vend'
+    sat: 'Sam'
+    sun: 'Dim'
+
+  add_item: 'Add item'
+  places: 'places'
+  top_products: 'Top products'
+  top_deals: 'Top deals'
+  top_news: 'Top news'
+  edit_store: 'Edit store'
+
+  resend_confirmation_instructions: 'Resend confirmation instructions'
+  set_new_password: 'Set new password'
+  forgot_password: 'Forgot your password?'
+  send_reset_instructions: 'Send me reset password instructions'
+  password: 'Password'
+  email: 'Email'
+  remember_me: 'Remember me'
+
+  edit: 'Modifier'
+  delete: 'Supprimer'
+  deactivate: "Désactiver"
+  change_email: 'Changer votre email pour accéder à votre profil'
+  change_password: 'Changer votre mot de passe pour accéder à votre profil'
+  settings: 'Désactivation de votre profil Jangala'

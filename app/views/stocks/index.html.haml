@@ -1,0 +1,43 @@
+.text-default
+  .l-header-fullimg
+    %div.wrapper
+      = title "Stocks"
+.wrapper.nm-stocks
+  .m-form-search.fright
+    %input{type:'text', placeholder: 'Rechercher'}
+    %input.btn.color1{type:'submit', value:'Ok'}
+  .l-subnav
+    %ul
+      %li
+        %a.current.masonry-filter{href: '#', 'data-masonry-filter' => ".stock-item"}
+          %span Tout (
+          %span.total 0
+          )
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-products"}
+          %i.icon.i-product
+          %span Produits (
+          %span.total 0
+          )
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-deals"}
+          %i.icon.i-deal
+          %span Promotions (
+          %span.total 0
+          )
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-trash"}
+          %i.icon.i-trash
+          %span Corbeille (
+          %span.total 0
+          )
+  %table.m-table#stocks
+    %tr
+      %th{colspan: '2'} Produit
+      %th Catégorie
+      %th Tag
+      %th
+        Stock
+        %i.icon.i-sort-desc
+      %th Fin promo
+      %th{colspan: '2'} &nbsp;

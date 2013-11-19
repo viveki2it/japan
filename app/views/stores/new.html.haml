@@ -1,0 +1,189 @@
+.vertical-steps
+  .step.step1.l-header-fullimg
+    .wrapper
+      .ribbon-shops
+      .macbookpro
+      .coda-slider#landing-slider        
+        %div
+          .text-wrap
+            %h1.title
+              Le web utile aux 
+              %br
+              commerçants
+            %p Jangala Market est le réseau qui connecte les internautes avec les commerces de Paris.
+            %ul
+              %li= create_profile_button
+              %li= link_to "Voir la vidéo", "#", class: 'btn big no-shadow-inset btn-video'
+          .figure
+            = image_tag 'landing/slide1.jpg', alt: "Vos produits, actualités & promotions diffusées aux internautes"
+            .figcaption Vos produits, actualités & promotions diffusées aux internautes
+        %div
+          .text-wrap
+            %h2.title
+              Rejoignez les 50 
+              %br
+              magasins déjà inscrits !
+            %p Les 100 premiers magasins recevront un suivi personnalisé et des bonus de visibilité.
+            %ul
+              %li= create_profile_button("En profiter !", "yellow")
+              %li= link_to "Voir la vidéo", "#", class: 'btn big no-shadow-inset btn-video'          
+          .figure
+            = image_tag 'landing/slide2.jpg', alt: "Différentes catégories d'activités sur Jangala Market"
+            .figcaption Différentes catégories d'activités sur Jangala Market
+        %div
+          .text-wrap
+            %h2.title
+              Gratuit et 
+              %br
+              sans engagement
+            %p Seules les ventes additionnelles générées sur Jangala Market sont soumises à une commission.
+            %ul
+              %li= create_profile_button
+              %li= link_to "Voir la vidéo", "#", class: 'btn big no-shadow-inset btn-video'
+          .figure
+            = image_tag 'landing/slide3.jpg', alt: "Différentes catégories d'activités sur Jangala Market"
+            .figcaption Votre profil magasin gratuit sur Jangala Market
+  
+  .scroll-bottom#scroll-bottom
+    %i.icon.i-arrow-bottom
+  
+  .step.step2.light.with-icons-list    
+    .wrapper
+      %h2 Jangala Market simplifie le web pour le commerce local
+      %h3 Améliorez la visibilité de votre commerce et Augmentez votre CA gr&acirc;ce à l'Internet
+      %ul.icons-list
+        %li
+          %i.icon.i-round.i-fast.i-small
+          %span.title Gratuit*
+          %span.subtitle
+            La création de votre profil
+            %br
+            est gratuite
+        %li
+          %i.icon.i-round.i-simple.i-small
+          %span.title Simple
+          %span.subtitle
+            Aucune compétence
+            %br
+            technique n’est requise
+        %li
+          %i.icon.i-round.i-support.i-small
+          %span.title Sur-mesure
+          %span.subtitle
+            Personalisé &agrave; votre activité
+            %br
+            et &agrave vos contraintes
+      %p.legend 
+        * commission sur ventes issues de la place de marché Jangala Market adaptée à votre modèle d'affaire 
+        %br
+        (entre 3 & 15% en fonction de votre marge commerciale)
+
+  .step.step3.dark.with-icons-list
+    .wrapper
+      %h2
+        Jangala Market c'est le Web To Store:
+      %h3
+        de l'apport de visibilité et de la vente en ligne jusqu'&agrave; la génération de trafic physique
+        %br
+        et la collecte de produits en magasin!
+      %ul.icons-list
+        %li
+          %i.icon.i-round.i-market.i-big
+          %span
+            %b Communauté
+            %br
+            Vos nouveautés et vos
+            %br
+            actualités sont notifées
+            %br
+            &agrave; la communauté Jangala
+        %li
+          %i.icon.i-round.i-suggestion.i-big
+          %span
+            %b Bouche à oreille
+            %br
+            Les internautes recommandent
+            %br
+            vos produits et promotions &agrave;
+            %br
+            leurs contacts
+        %li
+          %i.icon.i-round.i-diffusion.i-big
+          %span
+            %b Référencement
+            %br
+            Vos produits et promotions
+            %br
+            sont référencés sur nos
+            %br
+            sites partenaires
+        %li
+          %i.icon.i-round.i-seo.i-big
+          %span
+            %b Google
+            %br
+            Votre profil et vos produits
+            %br
+            appara&icirc;ssent dans les résultats
+            %br
+            de recherche Google
+        %li
+          %i.icon.i-round.i-buzz.i-big
+          %span
+            %b Réseaux sociaux
+            %br
+            Vos produits et promotions
+            %br
+            sont partagés sur les réseaux
+            %br
+            sociaux par vos clients
+  .step.step4.light.with-icons-list
+    .wrapper
+      %h2
+        Fidélisez votre clientèle
+        %br
+        et Engagez vos prospects
+      %ul.icons-list
+        %li
+          %i.icon.i-round.i-traffic.i-medium
+          %span
+            Gain de traffic
+            %br 
+            en magasin
+        %li
+          %i.icon.i-round.i-contact.i-medium
+          %span
+            Outil de messagerie,
+            %br
+            chat, et rappel
+        %li
+          %i.icon.i-round.i-order.i-medium
+          %span
+            Prise de commandes
+            %br
+            et vente en ligne
+        %li
+          %i.icon.i-round.i-deals.i-medium
+          %span
+            Diffusion de vos deals
+            %br
+            et promotions
+        %li
+          %i.icon.i-round.i-fan.i-medium
+          %span
+            Optimisation de votre base
+            %br
+            de données client et prospect
+  .step.step5.dark
+    .bg-icons
+    .wrapper
+      %h2 Jangala Market vous connecte
+      %h3 aux internautes qui fréquentent votre quartier
+
+  .step.step6.light
+    .wrapper
+      %h2 Administration adaptée aux ordinateurs et tablettes
+      %h3 Gérez gratuitement votre activité en ligne directement depuis votre magasin
+      = image_tag 'landing/admin-tablettes-ordi.png', alt: "Administration pour ordinateur et tablettes"
+
+= render "stores/sign_up_form"

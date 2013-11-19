@@ -1,0 +1,78 @@
+.modal.news-form{'aria-labelledby' => "#{@type}FormLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    - unless @model.get('id')
+      %h1{id: "#{@type}FormLabel"} 
+        AJOUTER UNE 
+        = @title
+    - else
+      %h1{id: "#{@type}FormLabel"} 
+        MODIFIER VOTRE 
+        = @title
+
+  .modal-body
+    %form
+      %fieldset
+        .row-fluid.picture-placeholder
+          -# News
+        - if @type == "news"
+          .row-fluid.mb1
+            %label{for: 'title'} Titre
+            %input.span12{type: 'text', name: 'title'}
+          .row-fluid.mb1
+            %label{for: 'content'} Actualité
+            %textarea.span12.big{name: 'content'}
+        -# Products
+        - else if @type == "product"
+          .row-fluid.mb1
+            .span8
+              %label{for: 'product-name'} Titre
+              %input.span12{type: 'text', name: 'name', id: 'product-name'}
+            .span4
+              %label{for: 'product-price'} Prix
+              %input.span12{type: 'text', name: 'price', id: 'product-price'}
+          .row-fluid.mb1
+            .span12
+              %label{for: 'description'} Description
+              %textarea.span12{name: 'description'}
+        - else if @type == "deal"
+          .row-fluid.mb1
+            .span12
+              %label{for: 'name'} Titre
+              %input.span12{type: 'text', name: 'name'}
+          .row-fluid.mb1
+            .span12
+              %label Période
+              .row-fluid
+                .span5
+                  %input.span12.date{type: 'text', name: 'starts_at','data-datetimepicker'=>"true"}
+                .span7.row-fluid
+                  %label.span2{for: 'ends_at'} jusqu'à
+                  %input.span10.date{type: 'text', name: 'ends_at','data-datetimepicker'=>"true"}
+          .row-fluid.mb1
+            .span6
+              %label{for:'normal_price'} Prix initial
+              %input.span12{type: 'text', name: 'normal_price'}
+            .span6
+              %label{for:'discount_price'} Nouveau prix
+              %input.span12{type: 'text', name: 'discount_price'}
+          .row-fluid.mb1
+            .span12
+              %label{for: 'description'} Description
+              %textarea.span12{name: 'description'}
+
+        -# Common fields
+        .row-fluid
+          %label.dib.pr05{for: 'tag_id'} Type
+          != Nextdoorz.getTemplate('basic/tag_selector')(model: @model, tags: @tags)
+
+    - if @type == "product" || @type == "deal"
+      #variants
+        - # This will get popupaled with @type/variants using Backbone.CollectionBinder, see the view
+  
+      %a.add-variant{href: '#'}
+        Ajouter une nouvelle variante produit
+  
+  .modal-footer
+    %button.btn.big.color2.save Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

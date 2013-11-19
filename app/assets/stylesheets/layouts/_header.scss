@@ -1,0 +1,163 @@
+/* ==|=======================================================================
+   Module/Header
+   ========================================================================== */
+
+#header {
+	@include gradient-linear(#1c3c49, #132a33);
+	margin-top: .5em;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	@include box-shadow-multiple(0 1px 1px rgba(#000, .3), 0 -1px 0 rgba(#fff, .2));
+	text-align: right;
+	height: 4.4em;
+
+	.logo-jm {
+		float: left;
+		margin: 0.6em 0;
+		font-size: 1em;
+
+		&.beta {
+			margin: .9em 0 0.3em;
+		}
+	}
+} /* #header */
+
+
+	
+/*
+ * User's header specific elements. 
+ * They are here, because the nav of the user must appears even if he is browsing
+ * on the pro part of the app. 
+ */
+
+
+#header {
+  // z-index: 1000000; /* removed because #343 */ 
+  
+  .wrapper {
+    position: relative;
+  }
+    
+  /* Status */
+  &.is-centered {
+    a.logo-jm {
+      margin-left: 42%;
+    }
+  }
+  
+  .new-board {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -126px;      
+  }
+  
+  .search {
+    @include unselectable();
+    margin: 1.1em 1em 0 0;
+    position: relative;
+    display: inline-block;
+    @include transition();
+    
+    input {
+      @include border-radius(1em);
+      background: rgba(#fff, .7);
+      @include box-shadow-inset(0, 2px, 1px, rgba(#000,.36));
+      border: none;
+      padding: .4em .9em;
+      vertical-align: middle;
+      @include placeholder(#758b94);
+      height: 1.3125em; /* 21/16 */
+      
+      &:focus {
+        background: #fff;
+        @include placeholder(#ddd);
+      }
+    }
+    button {
+      border: none;
+      background: image_url('jangala-sprite.png') -541px -101px;
+      width: 13px;
+      height: 13px;
+      padding: 4px;
+      position: absolute;
+      right: 9px;
+      top: 10px;
+      
+      &:hover {
+        opacity: .9;
+      }
+    }
+  }
+  
+  .profile-wrap {
+    @include unselectable();
+    position: relative;
+    top: 10px;
+    z-index: 1;
+    display: inline-block;
+    cursor: pointer;
+
+    .profile {
+      cursor: pointer;
+      display: inline-block;
+
+      img {
+        @include border-radius(16px);
+        width: 47px;
+        height: 47px;
+      }
+      i.icon {
+        margin-left: .2em;
+      }
+
+      &:after {
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        @include border-radius(28px);
+        content: "";
+        width: 47px;
+        height: 47px;
+        border: solid 5px #142b34;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        &:after {
+          border-color: #000;
+        }
+      }
+    }
+  }
+  
+} /* #header */ 
+
+.subheader-text {
+  background-image: image_url('1px-white-90.png');
+  padding: .8em 0;
+  position: absolute;
+  top: 4.9em;
+  width: 100%;
+  @include box-shadow(0, 2px, 2px, rgba(#000, .28));
+  
+  p {
+    font: 1.1em/1.5 $proxima-bold;
+  }
+}
+
+/* States */ 
+.is-not-configured {
+  #header {
+    .profile-wrap, .search, .new-board {
+      display: none;
+    }
+  }
+  .subheader-nav {
+    display: none;
+  }
+}
+

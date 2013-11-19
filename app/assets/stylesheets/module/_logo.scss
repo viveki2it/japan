@@ -1,0 +1,24 @@
+/* ==|=======================================================================
+   Module/Logo
+   ========================================================================== */
+   
+.logo-jm {
+	background: image_url('jangala-sprite.png') no-repeat -20px -150px;
+	width: 158px;
+	height: 40px;
+	display: inline-block;
+	
+	&.grey {
+		background-position: -22px -103px;
+	}
+	
+	&.beta {
+		background-position: -20px -411px;
+		width: 181px;
+		height: 44px;
+		
+		&.grey {
+			background-position: -22px -363px;
+		}
+	}
+}

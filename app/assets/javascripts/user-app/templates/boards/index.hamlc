@@ -1,0 +1,17 @@
+.subheader-nav.l-header-fullimg.half
+  .wrapper.clearfix
+    .nav.boards#user-boards
+      %ul.tabs
+        - @boards.each (board)->
+          %li
+            %a.board-link{href: "/boards/#{board.id}", id: "board_#{board.id}"}
+              %span = (board.get 'title').capitalize()
+              %i.icon.i-close.i-dark
+    != Nextdoorz.getTemplate('shared/p_user_links')(help_link: @help_link)
+
+-# Add the loader animation for the loading board
+.m-loader.wrapper.board-loader
+  .loader-img
+  
+    
+#tab_container

@@ -1,0 +1,48 @@
+= Welcome to Nextdoorz source
+
+== Main Gems Versions:
+
+- Rails Gem is version 3.2.13
+- Backbone on Rails is version 1.0.0
+- bootstrap-sass is version 2.3.1.0
+- devise is version 2.2.3
+- haml is version 4.0.1
+- rabl is version 0.8.2
+- rails_admin is version 0.4.6
+
+<b>Important Notices:</b>
+The RABL gem now uses the Oj gem as JSON parser. Don't forget to bundle install that. 
+
+== Branches strategies:
+
+Those are the 3 main branches:
+- *Master* branch now equals and should always equal the production version of the app on Heroku. 
+- *Staging* branch will always equal the staging version of the app on Heroku.
+
+- *Development* branch: 
+  - Is the most advanced branch
+  - Is merged in staging for testing purposes
+  - Is merged in master when a functionnality works and needs to be put in production
+
+---
+
+Other branches:
+
+- One should create a local branch different from the main ones if he has to create a new functionnality
+
+If someone needs help or if different people have to work on the same functionnality, 
+then they should feel free to share it on GitHub. But remember to delete it as soon as
+the functionnality is merged in development. 
+
+- When a functionnality has to be tested, it may be merged in development to resolve eventual conflicts with the work of other
+
+When conflicts are solved and everything works fine in development, the new functionnality can be
+pushed in staging for testing purposes. 
+
+- When everything works fine in staging and JangalaMarket is satisfied, the new functionnality can be pushed in master
+
+Then the developer in charge of deployments will push the new functionnality on Heroku production. 
+
+<em>
+The branch "old master" is just a save of the branch master in which the last commit dated from December 2012. 
+</em>

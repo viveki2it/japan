@@ -1,0 +1,22 @@
+/* ==|=======================================================================
+   Layouts/4 cols
+   ========================================================================== */
+
+.l-4cols {
+	> .col {
+		vertical-align: top;
+		width: 23%;
+		width: 22%\9; /* <=IE8 Hack */
+		display: inline-block;
+		margin-right: 2%;
+		
+		&:last-child, &.last {
+			margin: 0;
+		}
+		
+		&.double {
+			width: 48.4%;
+			width: 47%\9; /* <=IE8 Hack */
+		}
+	}
+}

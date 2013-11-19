@@ -1,0 +1,72 @@
+.text-default
+  .l-header-fullimg.double
+    .wrapper
+      %h1= t(:my_account)
+
+.wrapper.w550.form.text-center
+  .row
+    %span.f-bold Votre email
+    = resource.email
+  %br
+  - if current_user.is_customer?
+    - if @facebook_errors
+      %p.alert= @facebook_errors
+    %a.btn.facebook{ href: user_omniauth_authorize_url(:facebook)}
+      %i.icon.i-btn.i-facebook
+      Lier le compte avec Facebook
+    %br
+  - elsif current_user.is_store_owner?
+    %h1 POST AUTOMATICALLY YOUR PRODUCTS, DEALS, AND NEWS TO YOUR WEB CHANNELS
+    %div{:style => "padding-left: 15%;"}
+      %form{:name => "FormName"}
+        %table{:width => "100%", :cellpadding => "5px", :cellspacing => "0px"}
+          %tr
+            %td{:colspan => "3"}
+              Connect jangala with your blog
+          %tr
+            %td
+              %input{type: 'radio', name: 'SC1', value: "#{BASE_URL2}users/auth/tumblr"}
+                = image_tag("/assets/social/tumblr-logo-small.png")
+            %td
+              %input{type: 'radio', name: 'SC1', value: "#{BASE_URL2}users/wordpress"}
+                = image_tag("/assets/social/wordpress-logo-small.gif")
+            %td
+              %input{type: 'radio', name: 'SC1', value: "#{BASE_URL2}users/blogger"}
+                = image_tag("/assets/social/blogger-logo-small.png")
+          %tr
+            %td{:colspan => "3"}
+              %input{type: 'button', name: 'butt', value: "Connect", :onclick=>"OpenWindow()"}
+    %table{:width => "100%", :cellpadding => "10px", :cellspacing => "0px"}
+      %tr
+        %td
+          Connect jangala with your Facebook
+          %br
+          = image_tag("/assets/social/facebooksmall.jpg")
+          %br
+          = button_to "Connect", user_omniauth_authorize_url(:facebook)
+        %td{:width => "5%"}
+        %td
+          Connect jangala with your Twitter
+          %br
+          = image_tag("/assets/social/icon-twitter.png")
+          %br
+          = button_to "Connect", user_omniauth_authorize_url(:twitter)
+
+  = form_for(resource, :as => resource_name, :url => user_path(resource.id), :html => { :method => :put ,:class=>'profile mt2', autocomplete: "off"}) do |f|
+    %fieldset
+      .tab-box
+        %h3.legend= t(:settings)
+        .group          
+          %p.mt0
+            Si vous voulez désactiver votre profil, merci d'envoyer un email à
+            = link_to "support@jangalamarket.com", "mailto:support@jangalamarket.com"
+
+%script
+  function OpenWindow(){
+  for(i=0;i<document.FormName["SC1"].length;i++){
+  if(document.FormName["SC1"][i].checked){
+  window.open(document.FormName["SC1"][i].value, "_self");
+  break;
+  }
+  }
+  }

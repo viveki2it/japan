@@ -1,0 +1,5 @@
+= form_tag follows_path do
+  %fieldset
+    = hidden_field_tag :store_id, @store.id
+    = t(:follow_store_notice, store_name: @store.name)
+    = submit_tag t(:follow), class: 'btn btn-primary'

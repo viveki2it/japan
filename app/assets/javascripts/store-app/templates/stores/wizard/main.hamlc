@@ -1,0 +1,29 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  %ul.modal-breadcrumb
+    %li.is-current#bread-step1
+      %span.num 1
+      %i.icon.i-valid
+      %span.name Catégorie
+    %li#bread-step2
+      %span.num 2
+      %i.icon.i-valid
+      %span.name Coordonnées
+    %li#bread-step3
+      %span.num 3
+      %i.icon.i-valid
+      %span.name Horaires
+    %li#bread-step4
+      %span.num 4
+      %i.icon.i-valid
+      %span.name Description
+    %li#bread-step5
+      %span.num 5
+      %i.icon.i-valid
+      %span.name Logo
+  .modal-header
+    %h1{id: "modalLabel"} &Eacute;tape #{@step}/#{@steps}
+  .modal-body
+    .row-fluid.step-placeholder
+  .modal-footer
+    %a.btn.color2.big.border0.save{:href => "#"} Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

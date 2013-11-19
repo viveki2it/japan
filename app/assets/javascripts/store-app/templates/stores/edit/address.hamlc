@@ -1,0 +1,23 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} Modifier l'adresse
+  .modal-body
+    .row-fluid.mb1
+      .span4
+        %label{for: 'street_number'} Numéro de rue
+        %input.span12{type: 'text', name: 'street_number'}
+      .span8
+        %label{for: 'street_name'} Nom de la rue
+        %input.span12{type: 'text', name: 'street_name'}
+    .row-fluid
+      .span4
+        %label{for: 'postal_code'} Code postal
+        %input.span12{type: 'text', name: 'postal_code'}
+      .span8
+        %label{for: 'city'} Ville
+        %input.span12{type: 'text', name: 'city', value: 'Paris', disabled: true}
+
+  .modal-footer
+    %a.btn.btn-primary.btn-large.save.color2.big{:href => "#"} Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

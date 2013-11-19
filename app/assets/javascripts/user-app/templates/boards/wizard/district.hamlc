@@ -1,0 +1,3 @@
+.map#paris-map
+  .districts-wrap
+    %h3.dnone Votre choix

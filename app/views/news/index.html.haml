@@ -1,0 +1,11 @@
+.text-default
+  .l-header-fullimg.double
+    .wrapper
+      %h1= "#{t :all_news}"
+
+.articles.masonry.wrapper
+  .news.only.list.clearfix#masonry-products
+    - @news.each_slice(2) do |pair|
+      - pair.each do |item|
+        = render "news/list_item", news: item
+    = paginate @news

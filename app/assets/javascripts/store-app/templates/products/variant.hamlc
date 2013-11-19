@@ -1,0 +1,8 @@
+.variant.row-fluid
+  .span6
+    %input{type: 'text', class: 'variant-name', data-name: 'name'}
+  .span4
+    %input{type: 'number', class: 'variant-stock', data-name: 'stock'}
+  .span2
+    %input{type: 'hidden', class: 'variant-destroy', data-name: '_destroy'}
+    %a.btn.btn-important.delete-variant{href: '#'} Supprimer

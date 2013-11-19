@@ -1,0 +1,11 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} Modifier numéro de téléphone
+  .modal-body
+    %form
+      %fieldset
+        %input.span4.offset4{type: 'text', name: 'phone_number'}
+  .modal-footer
+    %a.btn.btn-primary.btn-large.save.color2.big{:href => "#"} Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

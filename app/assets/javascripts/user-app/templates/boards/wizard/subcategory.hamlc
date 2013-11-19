@@ -1,0 +1,11 @@
+%label.checkbox-subcat.all{name: "subcat-all"}
+  %span Tout
+  %i.icon.i-tick.dnone
+- @model.get('category_parents').each (cat_parent)->
+  %fieldset
+    .checkbox-cat.checked.medium
+      %i.icon.i-category{class: "i-#{cat_parent.get 'permalink'}"}
+    - cat_parent.get('categories').each (cat)->
+      .checkbox-subcat{id: "category_#{cat.id}"}
+        %span= cat.get 'title'
+        %i.icon.i-tick.dnone

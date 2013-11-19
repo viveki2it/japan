@@ -1,0 +1,19 @@
+-# Shared haml for the follow button for each store of each column
+-# @ is a store model instance
+
+%h5
+  -# Skip if the store is undefined. An undefined store has no cid 
+  - unless @.cid is undefined 
+    %a.title{href:'/stores/#{@.get('id')}', :data => { "store-id" => @.get("id") }}= @.get('name')
+    %br
+    - if @.get('followed')
+      %a.btn.mini.is-following{href: '#', :data => { "store-id" => @.get("id") }}
+        %i.with-icon -
+        %span Vous suivez 
+          = @.get('name') 
+    - else
+      %a.btn.mini.btn-follow{href: "#", :data => { "store-id" => @.get("id"), "store-name" => @.get("name") }} 
+        -# '/stores/#{@product.get('store_id')}'}
+        %i.with-icon.yellow +
+        %span Suivre
+    

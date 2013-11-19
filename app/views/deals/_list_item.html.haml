@@ -1,0 +1,14 @@
+.edit-wrapper.article.type-deals{id: "deals_#{deal.id}",class: "#{@edit_store_mode ? 'editable': ''}"}
+  -if @edit_store_mode
+    .hidden-edit.left
+      .control-buttons
+        = link_to t(:edit), '#', class: 'btn btn-primary btn-mini edit',:popup => 'edit'
+        = link_to t(:deactivate), '#', class: 'btn btn-primary btn-mini delete',:popup => 'delete'
+  = link_to image_tag(deal.image_url(:middle)), deal #"/assets/image_example_middle.jpg"), deal #
+  %h3= link_to deal.name, deal
+  - unless deal.tag.nil?
+    %ul.tagcloud.small
+      %li=link_to deal.tag.name, "#"
+  %h4= "#{deal.discount_rate}%"
+  %p= ellipsis deal.description
+  

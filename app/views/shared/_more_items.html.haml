@@ -1,0 +1,12 @@
+- if items.length > 1
+  .articles.masonry.wrapper
+
+    %h2.mod-title.mt0
+      %span= list_title
+    %section#masonry-products.products.clearfix.mb2
+      - items.each do |item|
+        =render 'deals/list_item', deal:item if item.class.name == 'Deal'
+        =render 'news/list_item', news:item if item.class.name == 'News'
+        =render 'products/list_item', product:item if item.class.name == 'Product'
+
+    -#%a.btn.big.full.withborder{:href => "#"} Voir plus

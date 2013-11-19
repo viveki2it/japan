@@ -1,0 +1,58 @@
+/* ==|=======================================================================
+   Module/Nav
+   ========================================================================== */
+
+.l-subnav {		
+	margin-bottom: 1.8em;
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;	
+		border-bottom: 1px solid #e1e1e1;	
+	} /* ul */
+	
+	li {
+		display: inline-block;
+	}
+	
+	.total {
+		font-family: $proxima-light;
+	}
+	
+	a {
+		display: block;
+		color: #888;
+		font: 300 1.125em $proxima-regular; /* 18/16 */
+		padding: 0 .8em 1.55555556em; /* 28/18 */
+		position: relative;
+		bottom: -1px;
+		@include transition(none);
+		
+		&:hover {
+			border-bottom: 2px solid #888;
+			text-decoration: none;
+		}
+		.i-deal {
+			vertical-align: -1px;
+		}
+		
+		&.current {
+			color: $color1;
+			border-bottom: 2px solid $color1;			
+						
+			.i-product {
+				background-position: -93px -202px;
+			}
+			.i-deal {
+				background-position: -112px -203px;
+			}
+			.i-new {
+				background-position: -133px -205px;
+			}
+			.i-trash {
+				background-position: -157px -203px;
+			}
+		}
+	}
+} /* nav */

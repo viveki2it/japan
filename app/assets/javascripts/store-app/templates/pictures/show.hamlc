@@ -1,0 +1,3 @@
+.picture.middle
+  %a{href: @picture.image.original, id: "picture_#{@picture.id}"}
+    %img{src: @picture.image.middle}

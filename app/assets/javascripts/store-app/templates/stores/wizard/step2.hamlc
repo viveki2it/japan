@@ -1,0 +1,18 @@
+%p.subtitle Ajoutez votre adresse et votre numéro de téléphone
+.row-fluid.mb1
+  .span4
+    %label{for: 'street_number'} Numéro de rue
+    %input.span12{type: 'text', name: 'street_number'}
+  .span8
+    %label{for: 'street_name'} Nom de la rue (exemple : rue cardinet)
+    %input.span12{type: 'text', name: 'street_name'}
+.row-fluid
+  .span4
+    %label{for: 'postal_code'} Code postal
+    %input.span12{type: 'text', name: 'postal_code'}
+  .span4
+    %label{for: 'city'} Ville
+    %input.span12{type: 'text', name: 'city', value: 'Paris', disabled: true}
+  .span4
+    %label{for: 'phone_number'} Numéro de téléphone
+    %input.span12{type: 'text', name: 'phone_number'}

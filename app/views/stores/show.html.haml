@@ -1,0 +1,86 @@
+= render 'stores/details', store: @store
+
+.wrapper 
+  .l-subnav    
+    %ul
+      %li
+        %a.current.masonry-filter{href: '#', 'data-masonry-filter' => ""} 
+          %span Tout 
+          %span.total>= " (#{@products.length + @deals.length + @news.length})"
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-products"} 
+          %i.icon.i-product
+          %span Produits 
+          %span.total>= " (#{@products.length})"
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-deals"} 
+          %i.icon.i-deal
+          %span Promotions 
+          %span.total>= " (#{@deals.length})"
+      %li
+        %a.masonry-filter{href: '#', 'data-masonry-filter' => ".type-news"} 
+          %i.icon.i-new
+          %span Actualités 
+          %span.total>= " (#{@news.length})"
+
+.articles.wrapper.masonry
+  .list.masonry#masonry
+    - @products.each do |item|
+      = render "products/list_item", product: item
+
+    - @deals.each do |item|
+      = render "deals/list_item", deal: item
+
+    - @news.each do |item|
+      = render("news/list_item", news: item)
+
+
+
+-#.l-subnav.wrapper
+-#  %ul
+-#    %li
+-#      %a.title{href: store_url(@store)} 
+-#        %span Tout 
+-#        %span.total (12)
+-#    %li
+-#      %a.title{href: store_products_url(@store)} 
+-#        %i.icon.i-product
+-#        %span Produits 
+-#        %span.total (5)
+-#    %li
+-#      %a.title{href: store_deals_url(@store)} 
+-#        %i.icon.i-deal
+-#        %span Promotions 
+-#        %span.total (3)
+-#    %li
+-#      %a.title{href: store_news_index_url(@store)} 
+-#        %i.icon.i-new
+-#        %span Actualités 
+-#        %span.total (4)
+-#
+-#.l-3cols.articles.wrapper
+-#
+-#  .articles-col.col.products
+-#    %h2.clearfix
+-#      %a.title{href: store_products_url(@store)} Les produits
+-#      %a.link{href: store_products_url(@store)} Voir tout
+-#
+-#    - @products.each do |item|
+-#      = render "products/list_item", product: item
+-#
+-#  .articles-col.col.deals
+-#    %h2.clearfix
+-#      %a.title{href: store_deals_url(@store)} Les Promotions
+-#      %a.link{href: store_deals_url(@store)} Voir tout
+-#
+-#    - @deals.each do |item|
+-#      = render "deals/list_item", deal: item
+-#
+-#  .articles-col.col.news
+-#    %h2.clearfix
+-#      %a.title{href: store_news_index_url(@store)} Les actualités
+-#      %a.link{href: store_news_index_url(@store)} Voir tout
+-#
+-#    - @news.each do |item|
+-#      = render("news/list_item", news: item)
+

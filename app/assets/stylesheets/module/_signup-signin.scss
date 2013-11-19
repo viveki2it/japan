@@ -1,0 +1,31 @@
+/* ==|=======================================================================
+   Module/Inscription
+   ========================================================================== */
+
+.signup-signin {
+	padding: 1em 0 3em;
+	text-align: center;
+	
+	input {
+		display: inline-block;
+		width: 19%;
+		padding: .75em 1em;
+		margin-right: .2em;
+		height: 20px;
+	}
+	.btn {
+		vertical-align: top;
+		margin-top: -1px;
+		height: 46px;
+		font-size: 21px;
+		line-height: 1.3;
+		padding: 10px 16px;
+	}
+	
+	&.is-white {
+		background-image: image_url('1px-white-80.png');
+		border: dashed #eee;
+		border-width: 1px 0;
+	}
+	
+} /* .signup-signin */

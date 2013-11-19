@@ -1,0 +1,4 @@
+.m-rename-board
+  %input{name: 'title', type: 'text', value: @title}
+  %a.btn.edit-board-name-button.color1> Ok
+  %img.ajax-loader{:src => "/assets/ajax-loader.gif"}

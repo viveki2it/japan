@@ -1,0 +1,22 @@
+%form.m-tags-edit.wrapper
+  - @model.get('category_parents').each (cat_parent)->
+    %h3.title-h2= cat_parent.get 'title'
+    %fieldset
+      - cat_parent.get('categories').each (cat)->
+        %legend.title-h3= cat.get 'title'
+        - cat.get('tag_groups').each (tag_group)->
+          .tag
+            %h4.title-h4= tag_group.get 'name'
+            .inputs-wrap                
+              %label.is-active.total{for: 'tag#{tag_group.get 'id'}-all'}                 
+                %input{id: 'tag#{tag_group.get 'id'}-all', type: 'checkbox', checked: 'checked',
+                       name: 'tag#{tag_group.get 'id'}-all', data-tag-group-id: '#{tag_group.get 'id'}',
+                       class: 'checkbox-tag all-tags tag_group-#{tag_group.get 'id'}'}
+                Toutes
+              - tag_group.get('tags').each (tag)->
+                %label.is-active{for: 'tag#{tag_group.get 'id'}-#{tag.get 'id'}'}
+                  %input{id: 'tag#{tag_group.get 'id'}-#{tag.get 'id'}', type: 'checkbox', checked: 'checked',
+                       name: 'tag#{tag_group.get 'id'}-#{tag.get 'id'}', class: 'checkbox-tag one-tag tag-#{tag.get 'id'} tag_group-#{tag_group.get 'id'}',
+                       data-tag-group-id: '#{tag_group.get 'id'}', data-tag-id: '#{tag.get 'id'}'}
+                  = tag.get 'name'
+                

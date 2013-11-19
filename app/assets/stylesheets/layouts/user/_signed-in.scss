@@ -1,0 +1,18 @@
+/* ==|=======================================================================
+Layout/User/Signed in
+========================================================================== */
+
+.l-signed-in {
+	.user-wizard {
+		.l-header-fullimg {
+			margin-bottom: -3.6em;
+		}
+		.articles,
+		.m-cta-store {
+			display: none;
+		}
+	}
+	.is-not-signed-in {
+		display: none;
+	}
+}

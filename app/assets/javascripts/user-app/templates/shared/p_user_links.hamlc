@@ -1,0 +1,9 @@
+.nav.menu
+  %ul
+    - if @help_link
+      %li
+        %a{href: '#', :id => "btn-help"} Comment ça marche
+    %li
+      %a.jangalist.help-step8{href: "/user/jangalist"} Ma Jangalist
+    %li
+      %a.follows.help-step9{href: "/user/follows"} Mes magasins

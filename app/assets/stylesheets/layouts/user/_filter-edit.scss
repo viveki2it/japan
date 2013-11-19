@@ -1,0 +1,20 @@
+/* ==|=======================================================================
+   Module/User/Filter Edit
+   ========================================================================== */
+
+.l-filter-edit {
+	@include box-shadow(0, 0, 10px, rgba(0, 0, 0, .2));
+	background: #fff;
+	margin-top: 1em;
+	padding: 2em 0;
+	text-align: center;
+	
+	h2, .title {
+		font: 2.375em/1.5 $proxima-bold; /* 38/16 */
+		text-shadow: 0 3px 3px rgba(#000, .48);
+		text-transform: uppercase;
+		margin: 0 0 .2em;
+		color: $color5 !important;
+		text-shadow: none !important;		
+	}
+}

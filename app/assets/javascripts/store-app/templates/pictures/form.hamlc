@@ -1,0 +1,14 @@
+.uploader
+  %input.image_data{type: 'hidden', name: 'image_type'}
+  %input.image_data{type: 'hidden', name: 'image_base64'}
+  .row-fluid
+    .span3.upload-preview.text-left
+      %img.mb1{src: @current_picture.url if (@current_picture && @current_picture.url)}
+    .span6
+      %label.dnone{for: 'filename'} Change picture
+      .input-append.dib
+        %input.image_data.dnone{:type=>'text',:readonly=>"readonly", name: 'image_filename'}
+        %a.fileinput-button{href: '#'}
+          %span Add file
+            %input{type: 'file', name: 'image'}
+    .span3

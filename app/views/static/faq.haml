@@ -1,0 +1,65 @@
+.text-default
+  .l-header-fullimg
+    %div.wrapper
+      = title "FAQ"
+  .wrapper
+    .alert Attention : Jangala Market est actuellement en version bêta
+    %p La FAQ (frequently asked questions) est une série d’informations mises à la disposition des utilisateurs pour leur faciliter l’utilisation de nos services.
+    .accordion#accordion2
+      .accordion-group
+        .accordion-heading
+          =link_to 'Qu’est-ce que Jangala Market ?', '#collapseOne', :class => 'accordion-toggle color1', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'            
+        #collapseOne.accordion-body.collapse.in
+          .accordion-inner 
+            %p Jangala Market est la place de marché qui permet aux boutiques, commerces, et magasins de Paris de connecter avec les internautes qui fréquentent leurs quartiers.
+      .accordion-group
+        .accordion-heading
+          =link_to 'En quoi Jangala Market peut aider mon magasin, ma boutique, ou mon commerce ?', '#collapseTwo', :class => 'accordion-toggle color2', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapseTwo.accordion-body.collapse
+          .accordion-inner 
+            %p Jangala Market vous apporte la possibilité d’être visible sur internet, d’augmenter votre chiffre d’affaire, et de fidéliser vos clients. En créant votre profil pro, vous êtes référencé sur la communauté Jangala Market, sur Google, sur les réseaux sociaux, et sur nos sites partenaires. De même, Jangala Market vous permet de publier vos produits et promotions à la communauté afin de les vendre en ligne pour une collecte physique en magasin. Enfin, les internautes peuvent suivre votre profil afin d’être informé de vos promotions, nouveaux produits, et actualités.
+      .accordion-group
+        .accordion-heading
+          =link_to 'Dans quelle ville Jangala Market est-il disponible ?', '#collapse3', :class => 'accordion-toggle color3', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse3.accordion-body.collapse
+          .accordion-inner
+            %p Pour l’instant, Jangala Market est seulement disponible à Paris et très prochainement dans d’autres villes en France et en Europe. N’hésitez pas à nous envoyer vos recommandations à ce sujet !
+      .accordion-group
+        .accordion-heading
+          =link_to 'Quel type de catégorie d’activité supporte Jangala Market ?', '#collapse4', :class => 'accordion-toggle color1', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse4.accordion-body.collapse
+          .accordion-inner
+            %p Jangala Market est disponible pour les magasins, boutiques, et commerces des catégories d’activités suivantes : beauté et bien-être, maison et décoration, restauration et snacks, mode et accessoires, loisirs et sorties, culture et éducation.
+      .accordion-group
+        .accordion-heading
+          =link_to 'Comment puis-je créer un profil pour mon magasin, ma boutique, ou mon commerce ?', '#collapse5', :class => 'accordion-toggle color2', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse5.accordion-body.collapse
+          .accordion-inner
+            %p Pour créer votre profil pro, rendez-vous sur <a href="http://www.jangalapro.com">www.jangalapro.com</a> et saisissez le nom de votre magasin, votre email, et le mot de passe de votre choix. Afin de rendre votre profil pro attractif, vous pourrez ajouter votre logo, des photos, vos horaires d’ouverture, votre adresse, votre numéro de téléphone, et une description de votre magasin.      
+      .accordion-group
+        .accordion-heading
+          =link_to 'Quelle est la différence entre un produit, une promotion, et une actualité ?', '#collapse7', :class => 'accordion-toggle color1', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse7.accordion-body.collapse
+          .accordion-inner
+            %p Une promotion est une action temporaire qui vise à augmenter vos ventes. Une promotion a une date de début et une date de fin, ainsi qu’un nombre défini de places disponibles. Une promotion peut être achetée en ligne. Une actualité est un article que vous publiez sur votre profil pro Jangala afin de le rendre plus attractif. Un produit est tout simplement ce que vous vendez en tant que commerce ou boutique. Ne mettez pas en ligne des produits que vous n’avez pas en stock.
+      .accordion-group
+        .accordion-heading
+          =link_to 'Comment les internautes achètent mes produits et mes promotions ?', '#collapse8', :class => 'accordion-toggle color2', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse8.accordion-body.collapse
+          .accordion-inner
+            %p Les internautes peuvent acheter en ligne vos produits et vos promotions. Une fois l’internaute débité, il viendra dans votre magasin en fonction de vos horaires d’ouverture pour collecter physiquement le produit ou la promotion. il vous remettra un code à 3 chiffres qu’il conviendra de saisir dans votre administrateur Jangala afin de valider la collecte. Une fois la collecte effectuée, les fonds issus de la vente vous seront transféré automatiquement sur votre compte bancaire.
+      .accordion-group
+        .accordion-heading
+          =link_to 'Quels sont les frais induis par l’utilisation de Jangala Market ?', '#collapse9', :class => 'accordion-toggle color3', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse9.accordion-body.collapse
+          .accordion-inner
+            %p L’utilisation de Jangala Market est gratuite. Cependant, une commission entre 3% et 15% est prévue pour tout produit ou promotion vendu sur la place de marché.
+      .accordion-group
+        .accordion-heading
+          =link_to 'Comment puis-je contacter Jangala Market ?', '#collapse11', :class => 'accordion-toggle color1', 'data-toggle' => 'collapse', 'data-parent' => '#accordion2'        
+        #collapse11.accordion-body.collapse
+          .accordion-inner
+            %p Vous pouvez contacter Jangala Market par email : <a href="mailto:hello@jangalamarket.com">hello@jangalamarket.com</a> ou bien par téléphone au 09 80 90 36 13. Une fois enregistré sur Jangala Market, vous pourrez accéder au support client en cliquant sur le li en suivant : <a href="http://jangalasupport.com/">http://jangalasupport.com/</a>.
+    =link_to 'Télécharger le guide Jangala Market', '/jangalamarket-leguide.pdf', :class => 'btn full color2 big', :target => '_blank'
+    
+= render "stores/sign_up_form"

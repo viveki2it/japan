@@ -1,0 +1,25 @@
+/* ==|=======================================================================
+   Module/Loader
+   ========================================================================== */
+
+.m-loader {
+	text-align: center;
+	min-height: 18em;
+	position: relative;
+	
+	.loader-img {
+		background-image: image_url('items-loader.gif');
+		width: 64px;
+		height: 64px;
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -16px 0 0 -16px;		
+	}
+}
+
+.new-board-loader{
+  display: none;
+  margin-top: 150px;
+}

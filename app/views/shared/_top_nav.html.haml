@@ -1,0 +1,67 @@
+- if user_signed_in?
+  - if current_user.store_owner? 
+  
+    -# If the user is signed in and it's a store owner
+    .nav.primary
+      %ul 
+        - if current_user.store
+          %li= link_to 'Mode édition', edit_store_url(current_user.store, preview: nil)
+          %li= link_to 'Prévisualiser', store_url(current_user.store, preview: true)
+          %li= link_to 'Stocks', store_url(current_user.store, preview: nil) + '/stocks'
+      .profile-wrap
+        .profile.dropdown-toggle
+          = image_tag('user/profile-default.png')
+          %i.icon.i-arrow-bottom-small
+        %ul.m-dropdown-menu.pull-right
+          %li= link_to "Aide", 'http://jangalasupport.com/', target: 'blank'
+          %li= link_to 'Mon compte', edit_user_registration_path
+          %li
+            %a#btn-add-shop{href:'#'} Ajouter un magasin
+          %li= link_to 'Déconnexion', destroy_user_session_path, :method=> :delete
+
+  - else 
+    -# if the user is signed in and not a store owner
+    
+    .nav.primary.new-board
+      %ul
+        %li
+          %a.help-step7{href: '/user/boards/new', :data => {"limit-reached" => "#{current_user.has_reached_boards_limit?}"}} 
+            Créer un autre board
+    -# Search deactivated    
+      %form.search
+        %input{type: "text", placeholder: 'Recherche'}
+        %button
+        
+    .profile-wrap
+      .profile.dropdown-toggle
+        = image_tag('user/profile-default.png')
+        %i.icon.i-arrow-bottom-small
+      %ul.m-dropdown-menu.pull-right
+        %li= link_to 'Mes Boards', user_home_path + '/boards'
+        %li= link_to 'Mon compte', edit_user_registration_path
+        %li= link_to 'Déconnexion', destroy_user_session_path, :method=> :delete
+    
+- else
+  .nav.primary
+    %ul
+      - if pro_page?
+        -# If the user is not signed in but is browsing pro pages
+        
+        %li= pricing_link
+        %li= faq_link
+        %li= help_link
+        -if current_user and current_user.user?
+          %li= link_to 'Pourquoi Jangala Market ?','#'
+        %li.ml1= link_to 'Se connecter', '#', id: 'btn-signin', class: 'btn color3'
+        %li.account= link_to 'Créer un compte', "/#signup-section" unless is_landing_page?
+        %li= link_to "< Voir la place de marché", user_home_path, :class => "btn color3"
+      - else
+
+        -# If the user is not signed in and is browsing user pages
+ 
+        %li
+          %a.btn.color3.signin-mode#btn-user-connect{href: '/user/signin'} Déjà utilisateur, connectez-vous
+        %li
+          %a.btn.color3.signup-mode#btn-user-connect{href: '/user/signup'} Se créer un compte
+        %li
+          %a.btn.color3{href: '/pro'} Accès magasin

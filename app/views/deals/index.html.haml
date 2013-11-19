@@ -1,0 +1,11 @@
+.text-default
+  .l-header-fullimg.double
+    .wrapper
+      %h1= "#{t :all_deals}"
+
+.articles.masonry.wrapper
+  .deals.only.list.clearfix#masonry-products
+    - @deals.each_slice(2) do |pair|
+      - pair.each do |item|
+        = render "deals/list_item", deal: item
+    = paginate @deals

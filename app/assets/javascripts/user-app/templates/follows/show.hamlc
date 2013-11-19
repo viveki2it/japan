@@ -1,0 +1,8 @@
+.subheader-nav.l-header-fullimg.half
+  .wrapper.clearfix
+    != Nextdoorz.getTemplate('shared/p_board_links')()
+    != Nextdoorz.getTemplate('shared/p_user_links')()
+.wrapper
+  %h1.mod-title
+    %span Mes magasins
+#items_list.l-3cols.articles.wrapper

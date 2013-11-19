@@ -1,0 +1,9 @@
+- Nextdoorz.Cache.CategoryParents.each (cat, idx)->
+  .checkbox-cat{id: "category_#{cat.id}", data-category-id: "#{cat.id}"}
+    %i.icon.i-category{class: "i-#{cat.get 'permalink'}"}
+    %br
+    %span= cat.get 'title'
+    %br
+    %i.icon.i-tick.dnone
+  - unless (idx + 1) % 3
+    %br

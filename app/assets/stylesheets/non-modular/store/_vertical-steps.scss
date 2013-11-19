@@ -1,0 +1,267 @@
+/* ==|=======================================================================
+   Module/Vertical Steps
+   ========================================================================== */
+   
+.vertical-steps {
+	text-align: center;
+	
+	.scroll-bottom {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		z-index: 120000;
+		text-align: center;
+		@include gradient-linear(rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0.3));
+		display: none\9; /* No display for <=IE8 */
+		
+		.icon {
+			@include transition();
+			@include animation(bounce 1s infinite);
+			position: absolute;
+			opacity: .8;
+			bottom: 40px;
+		}
+	}
+	
+	.step {
+		background: center center no-repeat, repeat;
+		overflow: hidden;
+		position: relative;
+		
+		/* Ambiance */
+		&.dark {
+			color: #fff;
+			background-color: #0f698c;
+			@include box-shadow-inset(0, 2px, 2px, rgba(#000, .14));
+		}
+		&.light {
+			color: #000;
+			
+			h2 {
+				color: #0d6080;
+			}
+			h3 {
+				color: #89a4af;
+			}	
+		}
+		
+		&.with-icons-list {
+			padding: 10em 0 11em;
+		}
+		
+		h2 {
+			font-size: 3em;
+			font-weight: normal;
+			margin: 0;
+		}
+		h3 {
+			font-weight: normal;
+			margin: 0;
+			font-size: 1.3em;
+		}
+		ul.icons-list {
+			margin-top: 4em;
+		}
+		
+		/* Specific*/
+		&.step1 {
+			background: image_url('landing/step1.jpg') center -250px no-repeat;
+			padding: 11em 0 8em;
+			
+			.wrapper {
+				position: relative;
+
+				#landing-slider {
+					height: 340px;
+					overflow-y: hidden;
+				}
+			}
+			
+			.ribbon-shops {
+				background: image_url('jangala-sprite.png') -581px -203px;
+				width: 32px;
+				height: 282px;
+				display: inline-block;
+				position: absolute;
+				top: -176px;
+				right: -38px;
+				z-index: 1;
+			}
+									
+			.text-wrap {
+				background-image: image_url('1px-white-80.png');
+				@include box-shadow(0, 3px, 5px, rgba(0, 0, 0, .5));
+				@include border-radius(5px);
+				text-align: left;
+				margin-right: 5%;
+				padding: 0 570px .7em 2em;
+				@include box-sizing(border-box);
+				letter-spacing: -1px;
+				color: $color1-dark;
+				position: relative;
+				min-height: 340px;
+				
+				&:after {
+					content: "";
+					position: absolute;
+					top: 40%;
+					right: -15px;
+					background: image_url('jangala-sprite.png') no-repeat -164px -14px;
+					width: 15px;
+					height: 36px;
+				}
+				
+				.title {
+					padding: .7em 0 .3em;
+					margin: 0;
+					font: 2.5em/1 $proxima-bold; /* 40/16 */
+					text-transform: uppercase;
+					letter-spacing: -2px;
+				}
+				
+				p {
+					font-size: 1.5625em; /* 25/16 */
+					color: #234c5f;
+					margin-top: 0;
+				}
+				ul {
+					padding: 0;
+					position: absolute;
+					width: 464px;
+					bottom: 13px;
+					left: 32px;
+					background: rgba(#f6f6f6, .8);
+					
+					li {
+						list-style: none;
+						display: inline-block;
+						&:first-child {
+							width: 55%;
+							margin-right: 5%;
+						}
+						&:last-child {
+							width: 39%;
+						}
+						a {
+							@include box-sizing(border-box);
+							width: 100%;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+			img {
+				position: absolute;
+				top: 0px;
+				right: 25px;
+			}
+			.figcaption {
+				position: absolute;
+				top: 346px;
+				right: 25px;
+				width: 539px;
+				text-align: center;
+				text-transform: uppercase;
+				font: 300 .8em/1.3 $proxima-bold;
+				color: #fff;
+				z-index: 3;
+			}
+			.macbookpro {
+				background: image_url('landing/macbookpro.png');
+				width: 725px;
+				height: 435px;
+				position: absolute;
+				right: -48px;
+				top: -25px;
+				z-index: 1;
+			}
+		} /* .step1 */
+		
+		&.step2 {
+			padding-bottom: 8em;
+			
+			h2 {
+				font-size: 2.5em;
+			}
+			ul.icons-list {
+				li:first-child {
+					i.icon {
+						&:after {
+							content: "";
+							position: absolute;
+							z-index: 1;
+							left: 61px;
+							bottom: 29px;
+							border-bottom: 1px solid #ddd;
+							width: 500px;
+							height: 1px;
+						}
+					}
+				}
+			}
+			.legend {
+				margin-top: 3em;
+				color: #aaa;
+				font-size: .9em;
+			}
+		} /* .step2 */
+		
+		&.step3 {
+			background: image_url('pattern-bg2.png') repeat #0f698c;
+			padding: 0;
+			
+			.wrapper {
+				background: image_url('landing/line-step3-4.png') right 384px no-repeat;
+				padding: 10em 0 11em;
+			}
+			
+			ul.icons-list {
+				li {
+					margin: 0 .5em;
+					font-size: .9em;
+				}
+			}
+				
+		} /* .step3 */
+		
+		&.step4 {
+			background-image: image_url(''), image_url(''), image_url('landing/step4.png');
+			background-position: 0 0, 0 0, center center;
+			padding: 0;
+			
+			.wrapper {
+				background: image_url('landing/line-step3-4.png') right -346px no-repeat;
+				padding: 6em 0 11em;
+			}
+		} /* .step4 */
+		
+		&.step5 {
+			padding: 10em 0 15em;
+			background: image_url('pattern-bg2.png') repeat #0f698c;
+			
+			.bg-icons {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background: image_url('landing/step5.png') no-repeat center;
+				top: 0;
+			}
+			.wrapper {
+				z-index: 1;
+				position: relative;
+			}
+		} /* .step5 */
+		
+		&.step6 {
+			padding: 7em 0 3em;
+			
+			img {
+				margin-top: 2em;
+			}
+		} /* .step6 */
+		
+	}
+	
+} /* .vertical-steps */

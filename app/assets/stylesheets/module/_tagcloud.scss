@@ -1,0 +1,43 @@
+/* ==|=======================================================================
+   Module/Tagcloud
+   ========================================================================== */
+
+.tagcloud {
+	padding-left: 1em;
+	display: inline-block;
+	font-size: .9em;
+	margin: .4em 0 0;
+	vertical-align: top;
+	
+	li {
+		display: inline-block;
+		margin: 0 .6em 0 0;
+		a {
+			display: block;
+			padding: .2em .8em;
+			@include border-radius(4px);
+			@include box-shadow-multiple(inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, .05));
+			background: rgba(#fff, .8);
+			@include transition();
+			border: 1px solid #ccc;
+			border-bottom: 2px solid $red;
+			
+			&:hover {
+				text-decoration: none;
+				background: #fff;
+			}
+		}
+	}
+	
+	/* Size */
+	&.small {
+		margin: .9em 1em;
+		padding-left: .2em;
+		
+		li {
+			a {
+				padding: 0 .4em;
+			}
+		}
+	}
+}

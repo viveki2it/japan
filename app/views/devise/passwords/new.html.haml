@@ -1,0 +1,13 @@
+.text-default
+  .l-header-fullimg
+    .wrapper
+      %h1= t :forgot_password
+
+  .wrapper.form.text-center.m-form-search
+    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), 
+      :html => {:method => :post}) do |f|
+  
+      = f.input :email, :placeholder => "Votre email", :label => false
+      = f.button :submit, t(:send_reset_instructions), :class => "button btn big color1"
+  
+    = render "devise/shared/links"

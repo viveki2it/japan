@@ -1,0 +1,17 @@
+%p.subtitle Choisissez votre catégorie d’activité et votre sous-catégorie d’activité
+%h2.mt0 Catégorie
+.btn-group-jpath.categories{"data-toggle" => "buttons-radio"}
+  - for main_category in @parent_categories
+    %span.btn{type: "button", id: main_category.attributes.permalink,
+    category_id: main_category.attributes.id, class: "unactive"}
+      %i.i-category.icon{:class=>"i-#{main_category.attributes.permalink}"}
+      %br
+      != main_category.attributes.title
+#subcategories.dnone
+  %h2 Sous-catégorie(s)
+
+  - for category in @categories
+    .checkbox-subcat{parent_category_id: "category_#{category.attributes.parent_id}"}
+      %span{category: category.attributes.id}
+        != category.attributes.title
+      %i.icon.i-tick.dnone

@@ -1,0 +1,35 @@
+.deal.single.clearfix.l-header-fullimg.double
+  .wrapper.edit-wrapper{id: "deals_#{@deal.id}",class: "#{@edit_store_mode ? 'editable': ''}"}
+    -if @edit_store_mode
+      .hidden-edit.right
+        .control-buttons
+          = link_to t(:edit), '#', class: 'btn btn-primary btn-mini edit',:popup => 'edit'
+          = link_to t(:delete), '#', class: 'btn btn-primary btn-mini delete',:popup => 'delete'
+    .img-wrap= render_picture @deal
+
+    .article
+      %h1
+        = title @deal.name, {wrap: false}
+        - unless @deal.tag.nil?
+          %ul.tagcloud
+            %li=link_to @deal.tag.name, "#"
+      = render "stores/summary"
+      %table.options
+        %tr
+          %td.legend Nombre de places restantes
+          %td.value= @deal.stock
+        %tr
+          %td.legend Fin de la promotion dans
+          %td.value= distance_of_time_in_words_to_now @deal.ends_at
+            
+      %p= @deal.description
+      .footer.clearfix
+        %ul.price
+          %li.discount
+            %span.old=  "-#{@deal.normal_price}€"
+            %span.new= number_to_currency @deal.discount_price
+            %li.big= "-#{@deal.discount_rate}%"
+        =render "shared/product_buttons"          
+=render 'shared/more_items', items: @store.deals, list_title: "Tous les promotions"
+=render 'stores/details',moreinfo:true
+=render 'shared/share_popup', item: @deal

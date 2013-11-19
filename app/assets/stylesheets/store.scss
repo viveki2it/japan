@@ -1,0 +1,36 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require "./bootstrap"
+ *= require_self
+*/
+
+/* ==|=======================================================================
+   SMACSS Organisation http://smacss.com/
+   SCSS files in scss/style.css
+   ========================================================================== */
+   
+/* Common */
+@import "common";
+
+/* Module/Layout */
+@import "layouts/store/header";
+
+/* Module/Store */
+@import "jquery.ui.datepicker";
+@import "rails_admin/jquery.ui.timepicker";
+@import "module/store/editable";
+@import "module/autocomplete";
+@import "module/table";
+@import "module/store/store-start";
+@import "module/store/store-create-entity";
+
+/* Non Modular */
+@import "non-modular/store/stocks";

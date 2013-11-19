@@ -1,0 +1,33 @@
+/* ==|=======================================================================
+   Module/Articles Col
+   ========================================================================== */
+
+/* TMP : this module will be removed when we will use mansonry on user boards */
+.articles-col {
+	vertical-align: top;
+	
+	/* Specific */
+	&.products {
+		h2, h2 a {
+			color: $blue2;
+		}
+		article {
+			border-color: $blue2;
+			h4 {
+				background: rgba($blue2, .7);
+			}
+		}
+	}
+	&.deals {
+		h2, h2 a {
+			color: $blue3;
+		}
+		article {
+			border-color: $blue3;
+			h4 {
+				background: rgba($blue3, .7);
+			}
+		}
+	}
+	
+} /* .articles-col */

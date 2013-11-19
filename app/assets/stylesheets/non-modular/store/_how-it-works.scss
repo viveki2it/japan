@@ -1,0 +1,176 @@
+/* ==|=======================================================================
+   Module/How it works
+   ========================================================================== */
+
+.how-it-works {
+	h4 {
+		font: 1.5em/1.5 $proxima-light;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	.step {
+		overflow: hidden;
+		
+		.wrapper {
+			padding: 1em 0;
+			background: image_url('landing/howitworks-line.png') repeat-y 20px center;
+		}
+	
+		h2 {
+			background: image_url('landing/howitworks-sprite.png');
+			width: 274px;
+			height: 273px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 1em 0 1em 84px;
+			position: relative;
+			overflow: visible;
+			
+			&:before {
+				content: "";
+				position: absolute;
+				left: -64px;
+				top: 130px;
+				background: image_url('landing/howitworks-sprite.png') -18px -97px;
+				width: 76px;
+				height: 10px;
+			}
+		}
+		h3 {
+			background: #f6f30e;
+			display: inline-block;
+			vertical-align: middle;
+			width: 150px;
+			text-align: center;
+			@include border-radius(8px);
+			padding: .5em 0;
+			
+			.f-light {
+				font-size: .9em;
+			}
+		}
+		
+		dl, ul {
+			vertical-align: middle;
+			display: inline-block;
+			max-width: 500px;
+			margin: 2em;
+		}
+		dl {
+			
+			dt {
+				float: left;
+				background: #fff;
+				@include border-radius(100px);
+				@include box-shadow(0, 1px, 2px, rgba(#000, .14));
+				font-family: $proxima-bold;
+				padding: .1em .5em;
+				position: relative;
+				
+				&:after {
+					content: "";
+					position: absolute;
+					top: 11px;
+					left: -14px;
+					background: image_url('landing/howitworks-sprite.png') -61px -36px;
+					width: 9px;
+					height: 29px;
+				}
+				
+				&.double {
+					&:after {
+						background-position: -21px -20px;
+						width: 14px;
+						height: 42px;
+					}
+				}
+				
+				&.noarrow {
+					&:after { 
+						background: none;
+					}
+				}
+			}
+			dd {
+				padding-bottom: 1em;
+			}
+		}
+				
+		&.intro {
+			.wrapper {
+				background: none;
+			}
+			h2 {
+				background-position: -402px -2px;
+				
+				&:before {
+					left: -64px;
+					background-position: -18px -133px;
+					width: 78px;
+					height: 223px;
+				}
+			}
+		}
+		&.visibility {
+			h2 {
+				background-position: -1271px -30px;
+			}
+		}
+		&.products {
+			h2 {
+				background-position: -689px -12px;
+			}
+		}
+		&.deals {
+			h2 {
+				background-position: -972px -21px;
+			}
+		}
+		&.loyality {
+			.wrapper {
+				background: none;
+			}
+			h2 {
+				background-position: -121px 0;
+				
+				&:after {
+					content: "";
+					position: absolute;
+					top: -65px;
+					left: -64px;
+					background: image_url('landing/howitworks-line.png') repeat-y left center;
+					width: 2px;
+					height: 200px;
+				}
+			}
+		}	
+		
+		/* Style */
+		&.bg-white {
+			background: rgba(#fff, .6);
+			border: dashed #eee;
+			border-width: 1px 0;
+		}
+	}
+	
+}
+
+/* Responsive Medium Screens */
+@media all and (max-width: 1090px) {
+
+	.how-it-works {
+		.step {
+			h3 {
+				display: none;
+			}	
+		}
+	}
+	
+}
+	
+
+
+
+
+

@@ -1,0 +1,106 @@
+[RailsAdmin] RailsAdmin initialization disabled by default. Pass SKIP_RAILS_ADMIN_INITIALIZER=false if you need it.
+                    root        /                                              users#home
+                pro_home GET    /pro(.:format)                                 stores#new
+                         GET    /stores/:id/stocks(.:format)                   stocks#index
+               user_home GET    /user(/*path)(.:format)                        static#show {:permalink=>"empty"}
+        new_user_session GET    /users/sign_in(.:format)                       users/sessions#new
+            user_session POST   /users/sign_in(.:format)                       users/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                      users/sessions#destroy
+ user_omniauth_authorize        /users/auth/:provider(.:format)                users/omniauth_callbacks#passthru {:provider=>/facebook/}
+  user_omniauth_callback        /users/auth/:action/callback(.:format)         users/omniauth_callbacks#(?-mix:facebook)
+           user_password POST   /users/password(.:format)                      users/passwords#create
+       new_user_password GET    /users/password/new(.:format)                  users/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)                 users/passwords#edit
+                         PUT    /users/password(.:format)                      users/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                        devise/registrations#cancel
+       user_registration POST   /users(.:format)                               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                          devise/registrations#edit
+                         PUT    /users(.:format)                               devise/registrations#update
+                         DELETE /users(.:format)                               devise/registrations#destroy
+            users_create POST   /users/create(.:format)                        users#create
+                  boards GET    /boards(.:format)                              boards#index
+                         POST   /boards(.:format)                              boards#create
+                   board GET    /boards/:id(.:format)                          boards#show
+                         PUT    /boards/:id(.:format)                          boards#update
+                         DELETE /boards/:id(.:format)                          boards#destroy
+       deal_to_jangalist GET    /deals/:deal_id/to_jangalist(.:format)         deals#add_to_wishlist
+     deal_from_jangalist DELETE /deals/:deal_id/from_jangalist(.:format)       deals#remove_from_wishlist
+                   deals GET    /deals(.:format)                               deals#index
+                         POST   /deals(.:format)                               deals#create
+                    deal GET    /deals/:id(.:format)                           deals#show
+                         PUT    /deals/:id(.:format)                           deals#update
+                         DELETE /deals/:id(.:format)                           deals#destroy
+    product_to_jangalist GET    /products/:product_id/to_jangalist(.:format)   products#add_to_wishlist
+  product_from_jangalist DELETE /products/:product_id/from_jangalist(.:format) products#remove_from_wishlist
+                products GET    /products(.:format)                            products#index
+                         POST   /products(.:format)                            products#create
+                 product GET    /products/:id(.:format)                        products#show
+                         PUT    /products/:id(.:format)                        products#update
+                         DELETE /products/:id(.:format)                        products#destroy
+              news_index GET    /news(.:format)                                news#index
+                         POST   /news(.:format)                                news#create
+                    news GET    /news/:id(.:format)                            news#show
+                         PUT    /news/:id(.:format)                            news#update
+                         DELETE /news/:id(.:format)                            news#destroy
+                         POST   /stores/:store_id(.:format)                    stores#update
+      store_store_stocks GET    /stores/:store_id/:id/stocks(.:format)         stores#stocks
+        store_news_index GET    /stores/:store_id/news(.:format)               news#index
+              store_tags GET    /stores/:store_id/tags(.:format)               tags#index
+          store_products GET    /stores/:store_id/products(.:format)           products#index
+             store_deals GET    /stores/:store_id/deals(.:format)              deals#index
+           store_follows DELETE /stores/:store_id/follows(.:format)            follows#destroy
+                         GET    /stores/:store_id/follows(.:format)            follows#index
+        new_store_follow GET    /stores/:store_id/follows/new(.:format)        follows#new
+          store_pictures GET    /stores/:store_id/pictures(.:format)           pictures#index
+                         POST   /stores/:store_id/pictures(.:format)           pictures#create
+       new_store_picture GET    /stores/:store_id/pictures/new(.:format)       pictures#new
+           store_picture GET    /stores/:store_id/pictures/:id(.:format)       pictures#show
+                         PUT    /stores/:store_id/pictures/:id(.:format)       pictures#update
+                         DELETE /stores/:store_id/pictures/:id(.:format)       pictures#destroy
+                  stores GET    /stores(.:format)                              stores#index
+                         POST   /stores(.:format)                              stores#create
+               new_store GET    /stores/new(.:format)                          stores#new
+              edit_store GET    /stores/:id/edit(.:format)                     stores#edit
+                   store GET    /stores/:id(.:format)                          stores#show
+                         PUT    /stores/:id(.:format)                          stores#update
+                 picture GET    /pictures/:id(.:format)                        pictures#show
+        category_parents GET    /category_parents(.:format)                    category_parents#index
+                    tags GET    /tags(.:format)                                tags#index
+                   users GET    /users(.:format)                               users#index
+                         POST   /users(.:format)                               users#create
+                new_user GET    /users/new(.:format)                           users#new
+               edit_user GET    /users/:id/edit(.:format)                      users#edit
+                    user GET    /users/:id(.:format)                           users#show
+                         PUT    /users/:id(.:format)                           users#update
+                         DELETE /users/:id(.:format)                           users#destroy
+         category_stores GET    /categories/:category_id/stores(.:format)      stores#index
+              categories GET    /categories(.:format)                          categories#index
+            news_follows GET    /follows/news(.:format)                        news#index {:followed=>true}
+           deals_follows GET    /follows/deals(.:format)                       deals#index {:followed=>true}
+        products_follows GET    /follows/products(.:format)                    products#index {:followed=>true}
+                 follows GET    /follows(.:format)                             follows#index
+                         POST   /follows(.:format)                             follows#create
+             rails_admin        /admin                                         RailsAdmin::Engine
+               jangalist GET    /jangalist(.:format)                           wishlist#index
+                  static GET    /static(/:permalink)(.:format)                 static#show
+             user_signup GET    /user/signup(.:format)                         user#signup
+             user_signin GET    /user/signin(.:format)                         user#signin
+            user_profile GET    /profile(.:format)                             users#profile
+                         POST   /users/send-store-invitation(.:format)         users#send_store_invitation
+         users_recommend POST   /users/recommend(.:format)                     users#recommend
+                         GET    /*path(.:format)                               static#show {:permalink=>"404"}
+
+Routes for RailsAdmin::Engine:
+    dashboard GET         /                                      rails_admin/main#dashboard
+        index GET|POST    /:model_name(.:format)                 rails_admin/main#index
+          new GET|POST    /:model_name/new(.:format)             rails_admin/main#new
+       export GET|POST    /:model_name/export(.:format)          rails_admin/main#export
+  bulk_delete POST|DELETE /:model_name/bulk_delete(.:format)     rails_admin/main#bulk_delete
+history_index GET         /:model_name/history(.:format)         rails_admin/main#history_index
+  bulk_action POST        /:model_name/bulk_action(.:format)     rails_admin/main#bulk_action
+         show GET         /:model_name/:id(.:format)             rails_admin/main#show
+         edit GET|PUT     /:model_name/:id/edit(.:format)        rails_admin/main#edit
+       delete GET|DELETE  /:model_name/:id/delete(.:format)      rails_admin/main#delete
+ history_show GET         /:model_name/:id/history(.:format)     rails_admin/main#history_show
+  show_in_app GET         /:model_name/:id/show_in_app(.:format) rails_admin/main#show_in_app

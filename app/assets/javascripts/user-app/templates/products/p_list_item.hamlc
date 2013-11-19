@@ -1,0 +1,19 @@
+.article
+  %a{href: '/products/#{@product.get('id')}'}
+    - if @product.get('picture')
+      %img{src: @product.get('picture')['middle']}
+  %h3
+    %a{href:"/products/#{@product.get('id')}"}= @product.get 'name'
+  %h4
+    = @product.get_currency_price()
+  %p = @product.get 'description'
+  .shop.clearfix
+    - #%a.profile{href:'#'}
+    - #  %img{src: '/assets/landing/fondateur-jeanbaptiste.jpg'}
+    - if @board
+      - store = @board.get('stores').get(@product.get('store_id'))
+      != Nextdoorz.getTemplate('shared/p_follow_button')(store)
+    
+        
+    
+    

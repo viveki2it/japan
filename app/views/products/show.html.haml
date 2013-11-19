@@ -1,0 +1,27 @@
+-# TODO: fix this line
+- @store = @product.store
+
+.single.clearfix.product.l-header-fullimg.double
+  .wrapper.edit-wrapper{id: "products_#{@product.id}",class: "#{@edit_store_mode ? 'editable': ''}"}
+    -if @edit_store_mode
+      .hidden-edit.right
+        .control-buttons
+          = link_to t(:edit), '#', class: 'btn btn-primary btn-mini edit',:popup => 'edit'
+          = link_to t(:delete), '#', class: 'btn btn-primary btn-mini delete',:popup => 'delete'
+    .img-wrap= render_picture @product
+
+    .article
+      %h1
+        = title @product.name, {wrap: false}
+        - unless @product.tag.nil?
+          %ul.tagcloud
+            %li=link_to @product.tag.name, "#"
+      = render "stores/summary"
+      %p= @product.description
+      .footer.clearfix
+        %ul.price
+          %li.big= number_to_currency @product.price
+        =render "shared/product_buttons"
+=render 'shared/more_items', items: @store.products, list_title: "Tous les produits"
+=render 'stores/details', moreinfo:true
+=render 'shared/share_popup', item: @product

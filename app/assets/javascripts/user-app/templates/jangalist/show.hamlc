@@ -1,0 +1,8 @@
+.subheader-nav.l-header-fullimg.half
+  .wrapper.clearfix
+    != Nextdoorz.getTemplate('shared/p_board_links')()
+    != Nextdoorz.getTemplate('shared/p_user_links')()
+.l-4cols.articles.wrapper.pt3
+  %h1.mod-title.mt0
+    %span Jangalist
+#items_list.l-4cols.articles.wrapper

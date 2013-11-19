@@ -1,0 +1,6 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} ASD
+  .modal-body
+    %iframe{src: @url, width: 560}

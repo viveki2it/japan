@@ -1,0 +1,18 @@
+%table.text-edit
+  - items.order("day_cd ASC").each_with_index do |item|
+    %tr
+      %td
+        = translate_weekday item.day
+        \-
+      %td
+        - if item.status == :close
+          Fermé
+        - else
+          = item.start_at.strftime "%Hh%M"
+          - if item.pause_start_at and item.pause_end_at
+            \-
+            = item.pause_start_at.strftime "%Hh%M"
+            |
+            = item.pause_end_at.strftime "%Hh%M"
+          \-
+          = item.end_at.strftime "%Hh%M"

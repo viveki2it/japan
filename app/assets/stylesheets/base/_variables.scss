@@ -1,0 +1,41 @@
+/* ==|=======================================================================
+   Variables
+   ========================================================================== */
+
+/* Font families */
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$open-sans: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$proxima-bold: "proxima_nova_rgbold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$proxima-regular: "proxima_nova_rgregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$proxima-light: "proxima_nova_ltlight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* Colors */
+$yellow: #f8fb07;
+$blue1: #1a3642;
+$blue2: #1178a1;
+$blue3: #41aec8;
+$blue4: #0fb2e5;
+$red: #e3231a;
+
+$grey: #5e5e5e;
+$grey-light: lighten($grey, 10%);
+$grey-light2: lighten($grey, 20%);
+$grey-light3: lighten($grey, 30%);
+$grey-dark: darken($grey, 10%);
+
+$color1: $blue1;
+$color2: $blue2;
+$color3: $blue3;
+$color4: $yellow;
+$color5: $blue4;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+$color1-dark: darken($blue1, 10%);
+$color2-dark: darken($blue2, 10%);
+$color3-dark: darken($blue3, 10%);
+$color4-dark: darken($yellow, 10%);
+
+/* Font sizes */
+$baseLineHeight: 1.3;
+$baseFontSize: 1em;

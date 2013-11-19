@@ -1,0 +1,10 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} EDITER VOTRE LOGO
+  .modal-body
+    %input.store_logo_file_upload{type:'file',name:'store[logo]'}
+    .row-fluid.picture-placeholder
+  .modal-footer
+    %a.btn.color2.big.border0.save{:href => "#"} Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

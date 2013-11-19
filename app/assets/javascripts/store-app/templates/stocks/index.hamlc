@@ -1,0 +1,53 @@
+%tr.stocks-show{id: "stock"}
+  %td.table-img
+    - #= image_tag('http://www.intersport-pertuis.com/images/jpg/p1-produits-145.jpg')
+  %td
+    %a.stocks-main-edit{href:'#'}
+      = @model.name
+      %i.icon.i-edit
+  %td
+    = @model.category.title
+  %td
+    = @model.tag.name
+  %td.stocks-values
+    %span.stocks-total
+      = @model.stock
+    - if @model.variants?
+      - for i, variant of @model.variants
+        %span.stocks-number{id: i}
+          = variant.stock
+        %span.stocks-label
+          = variant.name
+  %td
+    - if @model.ends_at?
+      - left = (new Date(@model.ends_at) - new Date())
+      - if left > 0
+        = Math.floor(left / 1000 / 60 / 60 / 24)
+        Jour(s)
+    - else
+      \-
+  %td.stocks-btn
+    %a.btn.small.stocks-btn-update{href:'#'} Mettre à jour le stock
+  %td
+    %i.icon.i-trash.stocks-delete
+%tr.stocks-edit{id: "stock-edit"}
+  %td{colspan:'2'}
+    %span.f-bold
+      = @model.name
+  %td{colspan:'4'}
+    - if @model.variants?
+      - for i, variant of @model.variants
+        %a.stocks-variant-delete X
+        %span.stocks-number{id: i}
+          = variant.name
+        %input{type:'number', value: variant.stock}
+    .stocks-new
+    %a.stocks-add{href:'#'} + Ajouter
+    %span.stocks-total-wrap
+      Total :
+      %span.f-bold
+        = @model.stock
+  %td.stocks-btn
+    %a.btn.color3.small.stocks-btn-valid{href:'#'} Mettre à jour
+  %td
+    &nbsp;

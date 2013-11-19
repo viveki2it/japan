@@ -1,0 +1,55 @@
+@mixin gradient-for-edit-button($image){
+  border-color: rgb(190,198,201);
+  color:white;
+  background: #729eb1; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: image_url($image) no-repeat 4px center, url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzcyOWViMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NjgzOTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: image_url($image) no-repeat 4px center center, -moz-linear-gradient(top,  #729eb1 0%, #568395 100%); /* FF3.6+ */
+  background: image_url($image) no-repeat 4px center center, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#729eb1), color-stop(100%,#568395)); /* Chrome,Safari4+ */
+  background: image_url($image) no-repeat 4px center, -webkit-linear-gradient(top,  #729eb1 0%,#568395 100%); /* Chrome10+,Safari5.1+ */
+  background: image_url($image) no-repeat 4px center, -o-linear-gradient(top,  #729eb1 0%,#568395 100%); /* Opera 11.10+ */
+  background: image_url($image) no-repeat 4px center, -ms-linear-gradient(top,  #729eb1 0%,#568395 100%); /* IE10+ */
+  background: image_url($image) no-repeat 4px center, linear-gradient(to bottom,  #729eb1 0%,#568395 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#729eb1', endColorstr='#568395',GradientType=0 ); /* IE6-8 */
+
+}
+.item.editable .hidden-edit {
+  margin: -5px -11px;
+  padding: 5px 0.9em;
+}
+
+.logo.editable .hidden-edit {
+}
+
+.category.editable .hidden-edit {
+  margin-top: -25px;
+  padding:3px 0;
+}
+
+.editable {
+  .hidden-edit {
+    display: none;
+    background: #18333E !important;
+    opacity: 0.8;
+    position: absolute;
+    border-radius: 5px;
+  }
+  .btn {
+    display: inline;
+  }
+  .control-buttons {
+    text-align: center;
+    .delete {
+      padding-left: 20px;
+      @include gradient-for-edit-button('icons/delete.png');
+    }
+    .replace {
+      padding-left: 20px;
+      @include gradient-for-edit-button('icons/replace.png');
+    }
+    .edit {
+      padding-left: 20px;
+      @include gradient-for-edit-button('icons/edit.png');
+    }
+  }
+}

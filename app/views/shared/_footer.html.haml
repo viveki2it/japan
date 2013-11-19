@@ -1,0 +1,51 @@
+.signup-signin.mt3.footer-collapse#new-shop.dnone
+  .wrapper
+    %h2 Ajoutez un nouveau magasin
+    =form_for :user,:url => stores_path, :remote => true,:method => "post",:html=>{:class =>['new_store','row-fluid']} do |f|
+
+      = f.fields_for :store_attributes do |store|
+        = store.text_field :nameNew, placeholder: "Le nom de votre magasin",'data-error'=>'store.name'
+
+      = f.submit "Valider", class: 'btn big color1', :disable_with => "Création en cours..."
+.wrapper.l-4cols
+  .col.double.l-2cols
+    .about
+      =link_to '', home_page_url, class: 'logo-jm grey beta border0'
+      %h2 A propos
+      %p
+        Jangala Market est la place de marché qui connecte les citadins avec les commerces, boutiques, et magasins
+        de Paris. Jangala Market dynamise le web local & le rend utile aux commerçants.
+        = about_link("Lire la suite")
+    %hr    
+    .col
+      %span Fièrement déployé sur
+      %br
+      = link_to 'Héroku', '//heroku.com', title: 'Logo Héroku', target: '_blank', class: 'ir heroku border0'
+    .col.last
+      %h2 Ressources
+      %ul
+        - if user_is_pro?
+          %li= pricing_link
+          %li= faq_link
+          %li= help_link
+        - else
+          %li= link_to "Blog", 'http://blog.jangalamarket.com/'
+        %li= about_link
+  .col.twitter
+    %h2 Actualités Twitter
+    -# load by $.getJSON in application.js
+  .col.contact
+    %h2 Appelez-nous
+    %span.phone 09 80 90 36 13
+    .social
+      = link_to '', 'https://twitter.com/jangalamarket', target: '_blank', class: 'icon i-social i-twitter border0'
+      = link_to '', 'http://www.facebook.com/pages/Jangala-Market/156397884499845', target: '_blank', class: 'icon i-social i-facebook border0'
+      = link_to '', '//blog.jangalamarket.com/', target: '_blank', class: 'icon i-social i-tumblr border0'
+.wrapper.mt1
+  %p.end
+    Copyright &copy; Jangala Market 2012 - 2013 //
+    = terms_of_use_link
+    &
+    = legals_link
+
+= render partial: 'shared/footer_script'

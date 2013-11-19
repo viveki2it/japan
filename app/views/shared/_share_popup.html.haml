@@ -1,0 +1,33 @@
+.cache-black.m-recommend{:style => "opacity: 1; position: absolute; height: auto; min-height: 100%;"}
+  %span#recommend-close.wrap-icon
+    %span.icon.i-cross
+  %span.logo-jm
+  
+  -current_url = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  -user_mail = current_user ? current_user.email : ""
+  #recommend-modal
+    .modal-header
+      %h3.title-border Recommander le produit !
+    .modal-body
+      .l-2cols
+        .col.share
+          %h4.title-h4 Partager l'article
+          %a.btn.big.no-border.facebook{target:'_blank',href:"https://www.facebook.com/sharer.php?u=#{current_url}"}
+            %i.icon.i-btn.i-facebook
+            %span Sur Facebook
+          %a.btn.big.no-border.twitter.mt1{target:'_blank',href:"https://twitter.com/intent/tweet?original_referer=#{current_url}&text=J%27aime%20ça%20#{current_url}"}
+            %i.icon.i-btn.i-twitter
+            %span Sur Twitter
+      
+        .col
+          %h4.title-h4 Envoyez un message
+          = form_tag('/users/recommend', :remote => true, :id => "recommend_form") do
+            %input{type: 'hidden', value: item.class.to_s, name: 'item_type'}
+            %input{type: 'hidden', value: item.id, name: 'item_id'}
+            %input{type: 'email', value: user_mail, name: 'r_email', placeholder: 'Votre email'}
+            %input{type: 'email', value: '', name: 'r_email2', placeholder: 'L\'email de votre ami(e)'}
+            %textarea{name: 'r_message', placeholder: 'Le message pour votre ami(e)'}
+            = button_tag("Valider", :class => "btn color2 big", :disable_with => "Envoi en cours")
+            %br
+            %p.form-notification  
+           

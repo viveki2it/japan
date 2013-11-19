@@ -1,0 +1,23 @@
+.cache-black{:style => "opacity: 1; position: absolute; height: auto; min-height: 100%;"}
+  %span#profile-close.wrap-icon
+    %span.icon.i-cross
+  %span.logo-jm
+  #signin-modal.modal.m-create-account
+    .modal-header
+      %h3.title-border Connectez-vous !
+    .modal-body    
+      %a.btn.big.no-border.facebook.mt1{href:'/users/auth/facebook/?action=signin'}
+        %i.icon.i-btn.i-facebook
+        %span Se connecter avec Facebook
+      %p.email-text.mt2
+        ou en utilisant votre e-mail
+     
+      %form.signup-signin{method: 'post', data-remote: 'true', action: '/users/sign_in.json'}
+        %input{type: 'email', value: '', name: 'user[email]', placeholder: 'Votre email'}
+        %input{type: 'password', value: '', name: 'user[password]', placeholder: 'Votre mot de passe'}
+        %button.btn.color1.big Valider
+        
+      %a{:href => "/users/password/new"}
+        Mot de passe oublié ?
+        
+  

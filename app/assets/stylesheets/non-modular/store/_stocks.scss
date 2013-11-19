@@ -1,0 +1,80 @@
+/* ==|=======================================================================
+   Non Modular/Store/Stocks
+   ========================================================================== */
+
+.nm-stocks {
+	margin-top: 3em;
+
+	.m-form-search input[type="text"] {
+		height: 17px;
+	}
+
+	.stocks-main-edit {
+		color: #000;
+	}
+	.stocks-total {
+		font-family: $proxima-bold;
+		margin-right: 1em;
+	}
+	input[type="number"] {
+		width: 2em;
+		height: 15px;
+		font-weight: 300;
+		font-size: .9em;
+		padding: 3px 5px 5px;
+		margin: 0 .5em 0 0;
+	}
+	.stocks-label {
+		font-size: .75em; /* 12/16 */
+		background-color: #e8e8e8;
+		padding: 0 .1em;
+		color: #585858;
+		@include border-radius(2px);
+		margin-right: .5em;
+	}
+	.stocks-edit {
+		display: none;
+
+		td {
+			padding-top: 1em;
+			padding-bottom: 1em;
+			background-color: #f4f8f9;
+			height: 30px;
+
+			&:first-child {
+				padding-left: 1.5em;
+			}			
+		}
+	}
+	.stocks-total-wrap {
+		padding-left: 2em;
+	}
+	.stocks-btn {
+		text-align: right;
+	}	
+	.stocks-delete {
+		opacity: .8;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+  .stocks-variant-delete {
+    opacity: .2;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+	.stocks-new {
+		display: inline-block;
+	}
+	.stocks-new-input {
+		width: 7em;
+	}
+	.m-form-search-small {
+		display: inline-block;
+		margin-right: .2em;
+	}
+}

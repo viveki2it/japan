@@ -1,0 +1,71 @@
+!!!
+-#
+  /[if lt IE 7]
+    %html.no-js.lt-ie9.lt-ie8.lt-ie7
+  /[if IE 7]
+    %html.no-js.lt-ie9.lt-ie8
+  /[if IE 8]
+    %html.no-js.lt-ie9
+
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{'http-equiv'=> 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
+    %title= content_for?(:title) ? content_for(:title) : "Jangala Market Beta"
+    %meta{name: 'description', content: 'Jangala Market Store'}
+    %link{rel: 'shortcut icon', type: 'image/png', href: '/favicon.png'}
+    = csrf_meta_tag
+    = stylesheet_link_tag 'user'
+  %body.is-configured
+    %header#header
+      .wrapper.clearfix
+        = link_to '', home_page_url, class: 'logo-jm beta'
+        .new-board#new-board
+          %span
+        %form.search
+          %input{type: "text", placeholder: 'Recherche'}
+          %button
+        %nav.primary
+          %ul
+            %li= link_to "Se connecter", '#', id: 'btn-user-connect', class: 'btn color3'
+        
+    .subheader-nav.l-header-fullimg.half
+      .wrapper.clearfix
+        %nav.boards#user-boards
+          .scrollbar
+            .track
+              .thumb
+                .end
+          .viewport
+            .overview
+              %ul
+                %li
+                  %a.active{href: '#'}
+                    %span Sport
+                    %i.icon.i-close.i-dark
+                %li= link_to 'Fashion', '#'
+                %li= link_to 'Fashion', '#'
+                %li= link_to 'Fashion', '#'
+                %li= link_to 'Fashion', '#'
+                %li= link_to 'Fashion', '#'
+                %li= link_to 'Fashion', '#'
+        %nav.menu
+          %ul
+            %li= link_to 'Aide', '#'
+            %li= link_to 'Ma jangalist', '#'
+            %li= link_to 'Mes magasins', '#'            
+    
+    %section#container
+      = yield
+    
+    %footer#footer= render partial: 'shared/footer'
+  / Scripts are in the end of file for better performance
+  = include_gon init: true, namespace: 'Context'
+  = javascript_include_tag "user-app"
+  = yield :scripts

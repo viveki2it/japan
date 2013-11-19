@@ -1,0 +1,28 @@
+/* ==|=======================================================================
+   Layouts/Header Full Img
+   ========================================================================== */
+
+.l-header-fullimg {
+	padding-top: 88px;
+	background: image_url("landing/step1.jpg") center -300px fixed no-repeat;
+	@include box-shadow-inset(0, -3px, 3px, rgba(#000, .3));
+	position: relative;
+	
+	&.double {
+		padding-top: 110px;
+	}
+	&.triple {
+		padding-top: 170px;
+	}	
+	&.half {
+		padding-top: 86px;
+	}
+}
+
+/* Big Screens > 1600px */
+@media (min-width: 1590px) {
+	.l-header-fullimg { 
+		background-size: 100% !important;
+		background-position: center -349px !important;
+	}
+}

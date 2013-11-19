@@ -1,0 +1,97 @@
+.text-default
+  .l-header-fullimg
+    %div.wrapper
+      = title "Tarifs"
+  .wrapper.nm-rates
+    %p.text-intro 
+      L'utilisation de Jangala Market est gratuite.
+      %br
+      Une commission est prélevée sur les transactions réalisés sur Jangala Market 
+      %br
+      (produits et promotions vendus via notre plateforme)
+    .bloc
+      %i.icon.i-mode.i-category
+      %h2 Mode & Accessoires
+      %span.commission 
+        10
+        %sup> %
+      %ul
+        %li Homme
+        %li Femme
+        %li Enfant
+        %li Chaussures homme
+        %li Chaussures femme
+        %li Lunettes
+        %li Sportwear
+        %li Accessoires
+    .bloc
+      %i.icon.i-beaute_bien_etre.i-category
+      %h2 Beauté & Bien-être
+      %span.commission 
+        15
+        %sup> %
+      %ul
+        %li Coiffeur 
+        %li Soins
+        %li Mieux-être
+    .bloc
+      %i.icon.i-maison.i-category
+      %h2 Maison & Déco
+      %span.commission 
+        13
+        %sup> %
+      %ul
+        %li Meuble et équipements
+        %li Décoration et objets
+        %li Commerce équitable
+    .bloc
+      %i.icon.i-culture.i-category
+      %h2 Culture & Education
+      %span.commission 
+        3
+        %sup> %
+      %ul
+        %li Musique
+        %li Art
+        %li Librairie
+    .bloc
+      %i.icon.i-sorties.i-category
+      %h2 Sorties & Loisirs
+      %span.commission 
+        10
+        %sup> %
+      %ul
+        %li Activités et loisirs
+        %li Bars et clubs
+        %li Spectacles Cours et ateliers
+    .bloc
+      %i.icon.i-fooding.i-category
+      %h2 Restaurants & Snacks
+      %span.commission 
+        8
+        %sup> %
+      %ul
+        %li Snacks et sandwich
+        %li Restaurants
+        %li Epicerie fine
+        %li Café / sucré
+    %p.text-center
+      Si vous avez des questions, n'hésitez pas à nous contacter ou bien consulter notre espace &nbsp;
+      = faq_link
+      %span> .
+    %ul.links
+      %li
+        Email :
+        = link_to "hello@jangalamarket.com", 'mailto:hello@jangalamarket.com'
+      %li Tél : 09 80 90 36 13
+      %br
+      %li
+        = faq_link
+      %li 
+        = link_to "Tutoriels Vidéos", 'http://tutorielsvideo.jangalasupport.com/', {target: '_blank'}
+      %li 
+        = link_to "Base de Connaissance", 'http://tutorielstexte.jangalasupport.com/', {target: '_blank'}
+      %li
+        = link_to "Support Pro", 'http://jangalasupport.com/', {target: '_blank'}
+ 
+= render "stores/sign_up_form"

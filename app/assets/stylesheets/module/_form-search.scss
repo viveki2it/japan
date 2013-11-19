@@ -1,0 +1,43 @@
+/* ==|=======================================================================
+   Module/Form search
+   ========================================================================== */
+   
+.m-form-search, .m-rename-board {
+	input[type="text"], input[type="email"], input[type="password"] {
+		@include border-radius(2px 0 0 2px);
+		border-right: none;
+		height: 19px;
+	}
+	.btn {
+		@include border-radius(0 2px 2px 0);
+		vertical-align: top;
+		padding: 0.43em 0.6em;
+		margin-left: -.2em;
+		height: 40px;
+		@include box-shadow(0,0,0,#000);
+		display: inline-block;
+	}
+	.simple_form{
+    .btn{
+      margin-left: 0px;
+    }  
+    &.form-inline input{
+      border: 1px solid #CCCCCC;
+    }
+	}
+} /* .m-form-search */
+
+.m-form-search-small {
+	@extend .m-form-search;	
+
+	input[type="text"] { 
+		height: 10px !important;
+		padding-left: .4em;
+		padding-right: .4em;
+		font-size: .9em;		
+	}
+	.btn.small {
+		padding: 5px 7px 6px;
+		font-size: .9em;
+	}
+}

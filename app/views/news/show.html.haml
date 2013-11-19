@@ -1,0 +1,19 @@
+.news.single.clearfix.l-header-fullimg.double{id: "news_#{@news.id}"}
+  .wrapper.edit-wrapper{id: "news_#{@news.id}",class: "#{@edit_store_mode ? 'editable': ''}"}
+    -if @edit_store_mode
+      .hidden-edit.right
+        .control-buttons
+          = link_to t(:edit), '#', class: 'btn btn-primary btn-mini edit',:popup => 'edit'
+          = link_to t(:delete), '#', class: 'btn btn-primary btn-mini delete',:popup => 'delete'
+    .img-wrap= render_picture @news
+
+    .article
+      = title @news.title
+      = render "stores/summary"
+      %p= @news.content
+      .footer.clearfix
+        %ul.btns
+          = recommend_button
+=render 'shared/more_items', items: @store.news, list_title: "Tous les actualités"
+=render 'stores/details',moreinfo:true
+=render 'shared/share_popup', item: @news

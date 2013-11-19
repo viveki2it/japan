@@ -1,0 +1,277 @@
+/* ==|=======================================================================
+   Module/User/Categories
+   ========================================================================== */
+
+.user-categories {
+	text-align: center;
+	padding-bottom: 2em;
+	
+	h2 {
+		font: 2.375em/1.5 $proxima-bold; /* 38/16 */
+		color: #fff;
+		text-shadow: 0 3px 3px rgba(#000, .48);
+		text-transform: uppercase;
+		margin: 0 0 .2em;
+	}
+	.btn.back {
+		display: none;
+	}
+	
+	.u-step1 {
+		min-height: 356px;
+	}
+	.u-step2 {
+		width: 55em;
+		margin: 0 auto;
+		display: none;
+		
+		.checkbox-subcat.all {
+			margin-bottom: .5em;
+		}
+		
+		fieldset {
+			text-align: left;
+			margin-top: 1.5em;
+			
+			.checkbox-cat {
+				float: left;
+				margin-right: 3em;
+			}
+			
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	
+	.u-step3 {
+
+		.map {
+			@include animation(fadeInDown 1s);
+			position: relative;	
+			width: 480px;
+			margin: 0 auto;
+			
+			.district {
+				position: absolute;
+				right: 420px;
+				top: 100px;
+				width: 200px;
+				background: rgba(#000, .8);
+				background: image_url('1px-black-80.png')\9; /* <=IE8 hack */
+				padding: .5em .8em;
+				@include border-radius(1em);
+				color: #fff;
+				white-space: nowrap;
+				font-family: $proxima-bold;
+			}
+			
+			.districts-wrap {
+				position: absolute;
+				left: 420px;
+				top: 20px;
+				width: 290px;
+				height: 340px;
+				overflow: auto;
+				
+				h3 {
+					color: #fff;
+					font-size: 1.5em;
+					text-shadow: 0 3px 3px rgba(#000, .48);
+				}	
+				label {
+					margin-right: .2em;
+				}
+			}
+		}
+	}
+	
+	/* Options */
+	&.l-dark {		
+		h2, h3 {
+			color: $color5 !important;
+			text-shadow: none !important;
+		}
+		legend {
+			color: $color2;
+		}
+		.checkbox-cat {
+			&:after {
+				border-color: rgba(0, 0, 0, 0.06);
+			}	
+			&:hover {				
+				&:after {
+					border-color: rgba(#000, .16);
+				}
+			}
+			&.checked {
+				@include box-shadow(0, 0, 0, transparent);
+			}
+		}
+		.checkbox-subcat {
+			border: none;
+			
+			&:after {
+				border: 3px solid #eee;
+			}	
+			&:hover {				
+				&:after {
+					border: 3px solid #ddd;
+				}
+			}
+			&.checked {
+				@include box-shadow(0, 0, 0, transparent);
+			}
+		}
+	}
+	
+}
+
+/* Fake checkbox for categories */
+.checkbox-cat {
+	@include animation(fadeInDownWebkit 1s);
+	@include border-radius(10em);
+	background: rgba(#fff, .9);
+	background: image_url('1px-white-90.png')\9;
+	text-align: center;
+	padding: 2.2em 0;
+	display: inline-block;
+	width: 11em;
+	height: 6.3875em;
+	vertical-align: top;
+	cursor: pointer;
+	@include transition();
+	margin: .8em;
+	position: relative;
+	@include unselectable();
+	font-size: .9em;
+	@include box-shadow(0, 11px, 3px, rgba(#000, .01));
+	
+	span {
+		font-size: 1.05em;
+		letter-spacing: -1px;
+	}
+	input {
+		display: none;
+	}
+	i.i-tick {
+		margin-top: .4em;
+	}
+	
+	&:after {
+		position: absolute;
+		content: "";
+		left: -8px;
+		top: -8px;
+		width: 11em;
+		height: 6.3875em;
+		padding: 2.2em 0;
+		@include border-radius(10em);
+		border: 8px solid rgba(#000, .16);
+	}
+	
+	/* States */
+	&:hover {
+		background: rgba(#fff, .95);
+		background: image_url('1px-white-95.png')\9;
+		
+		&:after {
+			border-color: rgba(#000, .25);
+		}
+	}
+	&.checked {
+		background: #fff;
+		@include box-shadow(0, 11px, 3px, rgba(#000, .31));
+		border: 1px $color5 solid\9; /* <=IE8 Hack */
+	
+		&:after {
+			border-color: $color5 !important;
+		}
+	}
+	
+	/* Sizes */
+	&.medium {
+		font-size: .5em;
+		border-radius: 3em;
+		
+		i.icon {
+			margin-top: -.6em;
+		}
+	}
+
+}
+
+
+/* Fake checkbox for sub-categories */
+.checkbox-subcat {
+	@include animation(fadeInDownWebkit 1s);
+	@include border-radius(1em);
+	background: rgba(#fff, .9);
+	background: image_url('1px-white-90.png')\9;
+	padding: 0 1.8em 0 1.1em;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+	@include transition();
+	margin: .4em .2em;
+	position: relative;
+	@include unselectable();
+	@include box-shadow(0, 1px, 3px, rgba(#999, .17));
+	color: #5b7e8d;
+	border-bottom: 3px solid rgba(#000, .27);
+	font-size: 1.1em;
+	white-space: nowrap;
+	
+	span {
+		border-right: 1px solid #ddd;
+		display: inline-block;
+		padding: 0.2em .7em .2em 0;
+		min-width: 175px;
+	}
+	input {
+		display: none;
+	}
+	i.i-tick {
+		position: absolute;
+		right: .7em;
+		top: .5em;
+	}
+	
+	&:after {
+		position: absolute;
+		content: "";
+		left: -3px;
+		top: -3px;
+		width: 100%;
+		height: 100%;
+		@include border-radius(1em);
+	}
+	
+	/* States */
+	&:hover {
+		background: rgba(#fff, .95);
+		background: image_url('1px-white-95.png')\9;
+		
+		&:after {
+			border: 3px solid rgba(#000, .25);
+		}
+	}
+	&.checked {
+		background: #fff;
+		@include box-shadow(0, 4px, 3px, rgba(#000, .31));
+		color: $color2;
+		border: 1px $color5 solid\9; /* <=IE8 Hack */
+		
+		&:after {
+			position: absolute;
+			content: "";
+			left: -2px;
+			top: -2px;
+			width: 99%;
+			height: 99%;
+			@include border-radius(.98em);
+			border: 3px solid $color5 !important;
+		}
+	}
+
+}

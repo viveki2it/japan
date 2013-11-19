@@ -1,0 +1,166 @@
+/* ==|=======================================================================
+   Site Settings
+   ========================================================================== */
+
+body { 
+	font:1em/1.3 $proxima-regular;
+	color: #000; 
+	font-weight: 300;
+	background: #fafafa image_url('pattern-noise.png');
+	overflow-x: hidden;
+}
+
+.footer-collapse {
+	margin-bottom: -3.6em;
+	border-bottom: 0 !important;
+}
+
+#footer {
+	margin-top: 4em;
+	background: #2f4954;
+	padding: 3em 0 2em;
+	color: #fff;
+	font: 300 .9em/1.3 $proxima-light;
+	
+	h2 {
+		font: 1.1em/1.3 $proxima-bold;
+		margin: 0 0 .1em;
+	}
+	p {
+		margin: 0 0 .5em;
+		color: #dae6ea;
+	}
+	a {
+		color: #fff;
+		border-bottom: dotted 1px #82A5B1;
+		&:hover {
+			border-bottom-style: solid;
+			text-decoration: none;
+		}
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	hr {
+		border-color: #4d666f;
+	}
+	.about {
+		.logo-jm.grey {
+			float: left;
+		}
+		p, h2 {
+			margin-left: 190px;
+		}				
+	}
+	.heroku {
+		background: image_url('jangala-sprite.png') no-repeat -22px -8px;
+		width: 115px;
+		height: 36px;
+		display: inline-block;
+	}
+	.twitter {
+		article {
+			margin-bottom: 1em;
+			.date {
+				font-size: .8em;
+			}
+		}
+	}
+	.contact {
+		.phone {
+			font: 1.7em/1.3 $proxima-bold;
+		}
+		.social {
+			margin-top: 1em;
+			> :not(script) {
+				display: inline-block;
+			}
+			a {
+				margin-right: .1em;
+				
+			 	&:hover {
+					opacity: .7;
+				}
+			}
+			.twitter-share-button {
+				width: 88px !important;
+			}
+		}
+	}
+	
+	p.end {
+		font-size: .8em;
+		color: #8ea1a9;
+		
+		a {
+			color: #dae6ea;
+		}
+	}
+}
+
+/* .wrapper */
+.wrapper {
+	max-width: 1140px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+/* h2 of module */
+.mod-title {
+	color: #7b9dac;
+	font: 300 5em/1.3 $proxima-light;
+	text-align: center;
+	text-transform: uppercase;
+	overflow: hidden;
+	margin: .5em 0;
+	background: none;
+
+	> span {
+		position: relative;
+		position: inline-block;
+		
+		&:after, &:before {
+			content: "";
+			position: absolute;
+			background: image_url('title-mod.png');
+			width: 1000px;
+			height: .7em;
+			top: .2em;
+		}
+		&:after {
+			right: -1020px;
+		}
+		&:before {
+			left: -1020px;
+		}
+	}
+}
+
+.title-border {
+	overflow: hidden;
+	text-align: center;
+	
+	.title {
+		color: #999;
+		position: relative;
+		
+		&:after, &:before {
+			content: "";
+			position: absolute;
+			width: 1000px;
+			top: .5em;
+			border-bottom: 1px solid #e6e6e6;
+		}
+		&:after {
+			right: -865px;
+		}
+		&:before {
+			left: -865px;
+		}
+		
+	}
+}
+
+

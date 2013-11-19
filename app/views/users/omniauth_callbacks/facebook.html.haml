@@ -1,0 +1,6 @@
+:javascript
+  element = parent.document.getElementById("oauth-callback");
+  element.setAttribute("status", "#{@status}");
+  element.setAttribute("error", "#{@error}");
+  element.setAttribute("user-id", "#{@user ? @user.id : ''}");
+  parent.document.oauth_callback();

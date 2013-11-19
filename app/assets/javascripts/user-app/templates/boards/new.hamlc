@@ -1,0 +1,64 @@
+.subheader-text
+  .is-not-signed-in
+    %p.wrapper.text-center
+      Jangala Market regroupe les produits, les actualités, et les promotions des boutiques de paris
+  .is-signed-in
+    %p.wrapper.text-center
+      Vous pouvez créez plusieurs tableaux de tendances et ainsi mieux organiser vos découvertes !
+      - current_url = window.location.host
+      %a.btn.small.facebook.ml1{target:'_blank',href:"https://www.facebook.com/sharer.php?u=#{current_url}"}
+        %i.icon.i-btn.i-facebook.i-small
+        Partager
+
+.user-wizard
+  .l-header-fullimg.triple.user-categories#categories
+    %form
+      %h2 Choisissez vos tendances
+      .u-steps
+    %br
+    %button#back.btn.big.no-border.dnone Revenir
+    %button#save.btn.color2.big.no-border.pl3.pr3 Valider
+
+  .new-board-loader.m-loader.wrapper
+    .loader-img
+
+  .l-4cols.articles.articles-col.wrapper.pt3.stores-examples
+    .mod-title.mt0
+      %span Exemples de magasins
+    .article.col
+      %img{src: '/assets/user/les-cocottes-en-papier.png'}
+      %h3
+        %a{href:"#"} Les cocottes en papier
+      .shop 
+        %a.btn.mini{href: '#'}
+          %i.with-icon.yellow +
+          Suivre
+    .article.col
+      %img{src: '/assets/user/les-feux-de-la-rampe.jpg'}
+      %h3
+        %a{href:"#"} Les feux de la rampe
+      .shop
+        %a.btn.mini{href: '#'}
+          %i.with-icon.yellow +
+          Suivre     
+    .article.col
+      %img{src: '/assets/user/kust.png'}
+      %h3
+        %a{href:"#"} Kust
+      .shop
+        %a.btn.mini{href: '#'}
+          %i.with-icon.yellow +
+          Suivre
+    .article.col
+      %img{src: '/assets/user/gada-fitness.jpg'}
+      %h3
+        %a{href:"#"} Gada fitness
+      .shop
+        %a.btn.mini{href: '#'}
+          %i.with-icon.yellow +
+          Suivre
+
+  .m-cta-store
+    %p Vous avez un commerce, une boutique, un magasin à Paris?
+    - current_pro_url = "http://" + window.location.host + "/pro"
+    %a.btn.big.color3{href: current_pro_url, target: '_blank'} Enregistrez-vous gratuitement

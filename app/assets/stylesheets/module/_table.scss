@@ -1,0 +1,63 @@
+/* ==|=======================================================================
+   Module/Table
+   ========================================================================== */
+   
+.m-table {
+	background: #fff;
+	@include box-shadow(0, 1px, 3px, rgba(#000, .12));
+	@include border-radius(2px);
+	width: 100%;
+	
+	th {
+		color: $color1;
+		padding: .5em .5em .5em 0;
+		text-transform: uppercase;
+		font-weight: 300;
+		font-family: $proxima-light;
+		background-color: #f9f9f9;
+		text-align: left;
+		font-size: 1.125em;
+		border-bottom: 1px solid #d8d8d8;
+		
+		&:first-child {
+			padding-left: 1.2em;
+			@include border-radius(2px 0 0 0);
+		}
+		&:last-child {
+			@include border-radius(0 2px 0 0);
+		}
+	}
+	tr {
+		td {
+			border-bottom: 1px solid #eee;
+			padding: .7em 1em .7em 0;
+			color: #303030;
+			
+			&:first-child {
+				padding-left: 1.2em;
+			}	
+			&:last-child {
+				padding-right: .7em;
+			}				
+		}
+		&:last-child td {
+			border-bottom: none;			
+		}
+	}
+	td.table-img {
+		padding: 1px !important;
+
+		img {
+			height: 50px;
+			margin-right: .6em;
+		}
+	}
+	
+	/* Medium Screens */
+	@media (max-width: 54em) {
+		font-size: .8em;
+		tr td {
+			padding-right: 2em;
+		}
+	}
+} /* .m-table */

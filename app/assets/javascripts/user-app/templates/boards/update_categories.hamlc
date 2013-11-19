@@ -1,0 +1,5 @@
+#child_container.user-categories.pt2
+  .u-steps
+  %br
+  %button#back.btn.big.no-border.dnone Revenir
+  %button#save.btn.color2.big.no-border.pl3.pr3 Valider

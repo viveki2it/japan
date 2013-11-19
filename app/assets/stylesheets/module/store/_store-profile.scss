@@ -1,0 +1,231 @@
+/* ==|=======================================================================
+   Module/Store Profile
+   ========================================================================== */
+   
+.store-profile {
+	margin-bottom: 3em;
+	padding-top: 110px;
+	
+	.wrapper {
+		position: relative;
+	}	
+	.l-header-fullimg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height:50px;
+	}	
+	.article {
+		@include box-shadow(0, 0, 3px, rgba(0, 0, 0, .3));
+		border-bottom: none;
+		background-color: #fff;
+		@include border-radius(2px 0 0 2px);
+		width: 63%;
+		@include box-sizing(border-box);
+		position: relative;
+		z-index: 1;
+		
+		.bloc-left {
+			width: 168px;
+			float: left;
+			padding: 1.5em 1.5em 0;
+			
+			img.logo-store {
+				width: 100%;
+			}
+			
+			ul.gallery {
+                min-height: 10px;
+				padding: 0;
+				li {
+					display: inline-block;
+					width: 45%;
+					margin-right: 5%;
+					
+					&:last-child {
+						margin: 0;
+					}
+					
+					a {
+						display: block;
+						
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+			h4 {
+				text-align: center;
+				color: $grey;
+			}
+		}
+		
+		.header {
+			margin-left: 216px;
+			
+			ul {
+				display: inline-block;
+				padding: 1em 0;
+				margin: 0 1em 0 0;
+				li {
+					list-style-type: none;
+					display: inline-block;
+					color: #aaa;
+
+                    &:first-child:after {
+						content: " / ";
+					}
+					a {
+						color: $blue2;
+						border-bottom: 1px solid rgba($blue2, .3);
+
+						&:hover {
+							border-color: rgba($blue2, .6);
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+
+		.title {
+			font: 1.8em/1.3 $proxima-bold;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+			color: $blue1;
+			margin: 0 0 .3em 216px;
+			a {
+				text-decoration: none;
+			}
+		}	
+		
+		.description {	
+			margin: 0 1em 0 216px;
+			min-height: 186px;
+
+			p {
+				margin: 0 0 .5em;
+				padding: 0 1.5em 0 0;
+				text-align: justify;
+			}
+		} 
+		
+		.footer {
+			clear: both;
+			
+			ul.details {
+				font-size: .8em;
+				background: rgba(#fff, .7);
+				border-top: 1px solid #d1d1d1;
+				padding: 0 0 1em;
+				margin-bottom: 0;
+				
+				li {
+					display: inline-block;
+					vertical-align: top;
+					
+					&.address {
+						width: 33%;
+					}
+					&.phone {
+						width: 27%;
+						p {
+							margin-top: 1.5em;
+                            min-height: 20px;
+						}
+					}
+					&.opening {
+						width: 40%;
+						td+td {
+							font-family: $proxima-bold;
+						}
+					}
+					
+					i.icon {
+						float: left;
+						margin: 1.5em 1em 1em;
+					}					
+					p, table {
+						margin: 1em 0 0 2em;
+					}
+					table td:first-child {
+						padding-right: .3em;
+					}
+				}
+			}
+			.btn-group-jpath {
+				li {
+					width: 33.33%;
+					
+					a {
+						@include box-shadow(0,0,0,0);
+						font-size: 1.2em;
+						width: 100%;
+						padding-left: 0;
+						padding-right: 0;
+						@include box-sizing(border-box);
+						border-bottom-color: #eee;
+					}
+					
+					&:first-child {
+						a {
+							@include border-radius(0 0 2px 0);
+							border-left: none;
+						}
+					}
+					&:last-child {
+						a {
+							@include border-radius(0 0 2px 0);
+							border-right: none;
+						}
+					}
+				}
+			}
+		}
+	} /* article */
+	
+	.map {
+		width: 37%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		float: right;
+		@include box-shadow(0, 0, 3px, rgba(0, 0, 0, .3));
+		margin-bottom: 1em;
+		height: 100%;
+		@include border-radius(0 2px 2px 0);
+		
+		.map_container {
+			@include border-radius(0 2px 2px 0);
+			height: 100%;
+			width: 100%;
+		  
+			.gmaps4rails_map {
+				@include border-radius(0 2px 2px 0);
+				width: 100%;
+		  		height: 100%;
+			}
+		}
+	}
+	
+	&.noimg {
+		background: none;
+		padding-top: 0;
+		
+		article {
+			@include box-shadow(0, 1px, 4px, rgba(#000,.32));
+			
+			&:after {
+				display: none;
+			}
+		}
+	}
+	
+} /* .profile */
+
+
+
+
+

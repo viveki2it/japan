@@ -1,0 +1,1 @@
+!= Nextdoorz.getTemplate("shared/forms")(model: @model, tags: @tags, type: "product", title: "PRODUIT")

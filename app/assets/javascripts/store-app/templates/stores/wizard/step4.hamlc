@@ -1,0 +1,6 @@
+%p.subtitle Description de votre magasin, commerce, boutique
+%form
+  %fieldset
+    .row-fluid
+      .span12
+        %textarea.span12.big{name: 'description'}= @description

@@ -1,0 +1,2 @@
+.modal
+  %img{src: @picture.get('image').original}

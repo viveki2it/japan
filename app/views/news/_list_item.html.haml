@@ -1,0 +1,10 @@
+.edit-wrapper.article.type-news{id: "news_#{news.id}",class: "#{@edit_store_mode ? 'editable': ''}"}
+  -if @edit_store_mode
+    .hidden-edit.left
+      .control-buttons
+        = link_to t(:edit), '#', class: 'btn btn-primary btn-mini edit',:popup => 'edit'
+        = link_to t(:delete), '#', class: 'btn btn-primary btn-mini delete',:popup => 'delete'
+  = link_to image_tag(news.image_url(:middle)), news #"/assets/image_example_middle.jpg"), news #
+  %h3= link_to news.title, news
+  %h4= news.updated_at.strftime "%d %b."
+  %p= ellipsis news.content

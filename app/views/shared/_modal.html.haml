@@ -1,0 +1,9 @@
+- id = id.to_s
+.modal.hide{'aria-labelledby' => "#{id}Label", 'aria-hidden' => true, :id => id}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h3{id: "#{id}Label"}= title
+  .modal-body= content
+  .modal-footer
+    - buttons.each do |button|
+      = button

@@ -1,0 +1,15 @@
+.signup-signin.is-white.mt3.footer-collapse#signup-section
+  .wrapper
+    %h2 Créez votre profil en 3min
+    -if user_signed_in?
+      %h3 Merci de vous déconnecter avant de pouvoir vous créer un compte professionnel.
+    -else
+      =form_for :user,:url => { :controller=>'stores',:action => "create" }, :remote => true,:method => "post",:html=>{:class =>['new_store','row-fluid']} do |f|
+  
+        = f.fields_for :store_attributes do |store|
+          = store.text_field :name, placeholder: "Le nom de votre magasin",'data-error'=>'store.name'
+  
+        = f.text_field :email, placeholder: "Votre email",'data-error'=>'email'
+        = f.password_field :password, placeholder: "Votre mot de passe",'data-error'=>'password'
+  
+        = f.submit "Créer un profil pro", class: 'btn big color1'        

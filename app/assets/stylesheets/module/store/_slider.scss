@@ -1,0 +1,132 @@
+/* ==|=======================================================================
+   Module/Slider (compatible with Coda Slider 3.0)
+   ========================================================================== */
+
+.coda-slider-wrapper {
+	width: 1140px !important;
+	position: relative;
+		
+	.coda-slider { 
+		width: 1140px;
+		height: 370px;
+
+		.panel{
+			width: 1140px;
+			@include animation(fadeInDown 1s);
+
+			.panel-wrapper { 
+				text-align: left;	
+				position: relative;		
+			}
+		}	
+	}
+	
+	.coda-nav-left, .coda-nav-right {
+		position: absolute;
+		z-index: 2;
+		top: 120px;
+		
+		a {	
+			text-indent: -9999px;
+			width: 69px;
+			height: 71px;
+			display: inline-block;
+			opacity: .9;
+			
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}	
+	.coda-nav-left {
+		left: -55px;
+	
+		a {
+			background: image_url('jangala-sprite.png') -439px -160px;
+		}
+	}
+	.coda-nav-right {
+		right: -56px;		
+		
+		a {
+			background: image_url('jangala-sprite.png') -511px -249px;			
+		}
+	}	
+
+	.loading { 
+		height:100%;
+		padding:20px; 
+		text-align:center;
+	}
+	
+}	
+
+
+/**********************************************************************
+*
+* Don't change anything below here unless you know what you're doing 
+*
+***********************************************************************/
+
+.coda-slider-wrapper{
+	clear:both; 
+	overflow: none;
+
+	.coda-slider {
+		float:left;
+		overflow:hidden;
+		position:relative;
+		
+		.panel-container {
+			position:relative;
+
+			.panel {
+				display:block;
+				float:left;
+			}
+		}
+	}
+
+	.coda-nav {
+
+		ul { 
+			clear:both;
+			display:block;
+			margin:auto;
+			overflow:hidden;
+
+			li { 
+				display:inline; 
+
+				a{
+					display:block; 
+					float:left;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	
+	.coda-nav-left-arrow, .coda-nav-right-arrow {
+		cursor:pointer;
+		float:left; 
+
+		a { 
+			display: block; 
+		}
+	}
+
+	.coda-nav-left, .coda-nav-right {
+		float:left; 
+		a { 
+			display: block; 
+			text-align: center; 
+			text-decoration: none;
+		}
+	} 
+
+	.coda-nav-left, .coda-nav-left-arrow { 
+			clear:both 
+		}
+
+}

@@ -1,0 +1,38 @@
+/* ==|=======================================================================
+   Module/Text default presentation
+   ========================================================================== */
+   
+.text-default {
+	.text-intro {
+		font: 1.5em/1.5 "proxima_nova_ltlight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		text-align: center;	
+	}
+	h1 {
+		text-align: center;
+		color: #fff;
+		font: 3em/1.3 $proxima-bold;
+		padding-bottom: 1em;
+		text-transform: uppercase;
+		text-shadow: 0 2px 4px rgba(#000, .5);
+		letter-spacing: -2px;
+	}
+	h2 {
+		margin: 1.3em 0 .5em;
+	}
+	p {
+		text-align: justify;
+		line-height: 1.5;
+	}
+	ul {
+		padding-left: 0;
+		
+		li {
+			background: image_url('li.png') no-repeat left top;
+			padding: 0 0 .6em 2em;
+			list-style: none;
+			line-height: 1.4;
+		}
+	}
+	
+} /* .text-defaut */

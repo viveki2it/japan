@@ -1,0 +1,44 @@
+#update_container
+.m-filters.wrapper.clearfix#filters
+  %ul.filter-cats.help-step3
+    %li
+      %span
+        = (_.map @board.get('category_parents').first(2), (cat)-> cat.get('title').capitalize()).join ' / '
+        - if @board.get('category_parents').length > 2
+          %span ...
+  %ul.filter-subcats.help-step4
+    %li
+      %span.subcat
+        = (_.map @board.get('categories').first(2), (cat)-> cat.get('title').capitalize()).join ' / '
+        - if @board.get('categories').length > 2
+          %span ...
+  %ul.filter-tags.help-step6
+    %li
+      %span.tag
+        = (_.map @board.get('tags').first(2), (tag)-> tag.get('name').capitalize()).join ' / '
+        - if @board.get('tags').length > 2
+          %span ...
+  %ul.filter-districts.help-step5
+    %li
+      %span.tag
+        = (_.map _.first(@board.get('district_ids'), 2), (dist)-> dist + (if (dist == 1) then 'er' else 'è')).join ' / '
+        - if @board.get('district_ids').length > 2
+          %span ...
+- if (@board.get('products').length + @board.get('deals').length + @board.get('news').length) == 0
+  .m-board-no-items.wrapper
+    %p.no-result
+      Il n'y a aucun produit, promotion, actualité qui corresponde à vos filtres.
+      %br
+      Veuillez les modifier ci-dessus.
+    %hr
+    %p Vous voulez voir les produits, promotions, et actualités de vos boutiques à Paris ? Invitez-les
+    %form.m-form-search
+      %input{type: 'text', placeholder: "L'email du magasin", id: "store-email-field"}
+      %input.btn.color3{type: 'submit', value: 'Ok', id: "store-email-post-button"}
+
+
+#items_list.l-3cols.articles.wrapper.pt3
+
+.m-infinite-scroll
+  .infinite-loader
+  %span.infinite-text Chargement en cours

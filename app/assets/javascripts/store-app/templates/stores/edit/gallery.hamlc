@@ -1,0 +1,11 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} EDITER LES IMAGES DE VOTRE VITRINE
+  .modal-body
+    .row-fluid#picture-placeholder1
+    .row-fluid#picture-placeholder2
+
+  .modal-footer
+    %a.btn.btn-primary.btn-large.save.color2.big{:href => "#"} Valider
+    %img.ajax-loader{src:'/assets/ajax-loader.gif'}

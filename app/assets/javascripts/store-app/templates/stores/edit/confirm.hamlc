@@ -1,0 +1,8 @@
+.modal{'aria-labelledby' => "modalLabel"}
+  .modal-header
+    %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true} ×
+    %h1{id: "modalLabel"} Êtes-vous sur de vouloir effectuer cette action ?
+  .modal-body
+  .modal-footer
+    %a.btn.btn-primary.btn-large.confirm.color2.btn-danger.big{:href => "#"} Oui
+    %a.btn.btn-primary.btn-large.cancel.color2.big{:href => "#"} Annuler
